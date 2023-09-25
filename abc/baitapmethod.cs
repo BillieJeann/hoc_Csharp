@@ -293,6 +293,8 @@ namespace abc
             //     return du;
             // }
             #endregion
+
+            #region Bai 8 :
             do
             {
                 Console.Write("Nhap so A : ");
@@ -344,9 +346,9 @@ namespace abc
                     break;
                 }                
             }
-            return bMin;
-           
+            return bMin;          
         }
+        #endregion
     }
 }
 
