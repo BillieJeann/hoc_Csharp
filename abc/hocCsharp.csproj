@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="baitapmethod.cs" />
     <Compile Include="dynamic.cs" />
     <Compile Include="kieudulieuobject.cs" />
     <Compile Include="phuongthuc.cs" />
