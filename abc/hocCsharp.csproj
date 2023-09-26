@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="baitapmethod.cs" />
+    <Compile Include="tukhoa_ref_in_out.cs" />
     <Compile Include="dynamic.cs" />
     <Compile Include="kieudulieuobject.cs" />
     <Compile Include="phuongthuc.cs" />
