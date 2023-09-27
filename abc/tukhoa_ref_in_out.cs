@@ -20,86 +20,86 @@ namespace abc
             // Bài tập
             #region Bài 5 :
 
-            //        Input(out int a, out int b, out int c);
-            //        FindMax(out int Max , a ,b , c);
-            //        FindMin(out int Min , a ,b , c);  
-            //        FindAvrSum(out int avrSum , a , b , c);
-            //        FindscnMaxandMin(out int scdMax, out int scdMin , a , b , c);
-            //        Message(Max, Min, avrSum,scdMax, scdMin);                       
+            //    Input(out int a, out int b, out int c);
+            //    FindMax(out int Max, a, b, c);
+            //    FindMin(out int Min, a, b, c);
+            //    FindAvrSum(out double avrSum, a, b, c);
+            //    FindscnMaxandMin(out int scdMax, out int scdMin, a, b, c);
+            //    Message(Max, Min, Math.Round(avrSum ,3), scdMax, scdMin);
             //}
             //static void Input(out int a, out int b, out int c)
-            //    {
-            //        a = int.Parse(Console.ReadLine());
-            //        b = int.Parse(Console.ReadLine());
-            //        c = int.Parse(Console.ReadLine());
-            //    }
+            //{
+            //    a = int.Parse(Console.ReadLine());
+            //    b = int.Parse(Console.ReadLine());
+            //    c = int.Parse(Console.ReadLine());
+            //}
             //static void FindMax(out int Max, int a, int b, int c)
+            //{
+            //    if (a > b)
             //    {
-            //        if (a > b)
-            //        {
-            //            Max = a;
-            //        }
-            //        else if ( b > c)
-            //        {
-            //            Max = b;
-            //        }
-            //        else
-            //        {
-            //            Max = c;
-            //        }            
+            //        Max = a;
             //    }
-            //static void FindMin(out int min , int a , int b, int c)
+            //    else if (b > c)
             //    {
-            //        if (a < b)
-            //        {
-            //            min = a ;
-            //        }
-            //        else if (b < c)
-            //        {
-            //            min =  b ;
-            //        }
-            //        else
-            //        {
-            //            min = c;
-            //        }
+            //        Max = b;
             //    }
-            //static void FindAvrSum(out int avrSum, int a, int b, int c)
+            //    else
             //    {
-            //        avrSum = (a + b + c) / 3 ;
+            //        Max = c;
             //    }
-            //static void FindscnMaxandMin(out int scdMax, out int scdMin ,int a, int b, int c)
+            //}
+            //static void FindMin(out int min, int a, int b, int c)
+            //{
+            //    if (a < b)
             //    {
-            //        scdMax = 0;
-            //        scdMin = 0;
-            //        if(a > b && a < c)
-            //        {
-            //            scdMax = a;
-            //            scdMin = a;
-            //        }
-            //        if (b > a && b < c)
-            //        {
-            //            scdMax = b;
-            //            scdMin = b;
-            //        }
-            //        if (c > a && c < b)
-            //        {
-            //            scdMax = c;
-            //            scdMin = c;
-            //        }
+            //        min = a;
             //    }
-            //static void Message(in int message1 , in int message2, in int message3, in int message4, in int message5)
+            //    else if (b < c)
             //    {
-            //        Console.Write($"Gia tri Max la : {message1}");
-            //        Console.WriteLine();
-            //        Console.Write($"Gia tri Min la : {message2}");
-            //        Console.WriteLine();
-            //        Console.Write($"Trung binh cong la : {message3}");
-            //        Console.WriteLine();
-            //        Console.Write($"So lon thu 2 la : {message4}");
-            //        Console.WriteLine();
-            //        Console.Write($"So nho thu 2 la : {message5}");
-            //        Console.WriteLine();
+            //        min = b;
             //    }
+            //    else
+            //    {
+            //        min = c;
+            //    }
+            //}
+            //static void FindAvrSum(out double avrSum, int a, int b, int c)
+            //{
+            //    avrSum = (double)(a + b + c) / 3;
+            //}
+            //static void FindscnMaxandMin(out int scdMax, out int scdMin, int a, int b, int c)
+            //{
+            //    scdMax = 0;
+            //    scdMin = 0;
+            //    if (a > b && a < c)
+            //    {
+            //        scdMax = a;
+            //        scdMin = a;
+            //    }
+            //    if (b > a && b < c)
+            //    {
+            //        scdMax = b;
+            //        scdMin = b;
+            //    }
+            //    if (c > a && c < b)
+            //    {
+            //        scdMax = c;
+            //        scdMin = c;
+            //    }
+            //}
+            //static void Message(in int message1, in int message2, in double message3, in int message4, in int message5)
+            //{
+            //    Console.Write($"Gia tri Max la : {message1}");
+            //    Console.WriteLine();
+            //    Console.Write($"Gia tri Min la : {message2}");
+            //    Console.WriteLine();
+            //    Console.Write($"Trung binh cong la : {message3}");
+            //    Console.WriteLine();
+            //    Console.Write($"So lon thu 2 la : {message4}");
+            //    Console.WriteLine();
+            //    Console.Write($"So nho thu 2 la : {message5}");
+            //    Console.WriteLine();
+            //}
             #endregion
 
             #region Bài 6 :
@@ -203,7 +203,7 @@ namespace abc
             //}
             #endregion
         }
-    }
+    }   
 }
 
 
