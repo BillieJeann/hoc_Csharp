@@ -48,7 +48,6 @@
     <Compile Include="dynamic.cs" />
     <Compile Include="kieudulieuobject.cs" />
     <Compile Include="phuongthuc.cs" />
-    <Compile Include="sidequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tukhoavar.cs" />
     <Compile Include="vonglapfor.cs" />
