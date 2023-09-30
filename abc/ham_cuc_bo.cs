@@ -108,7 +108,41 @@ namespace abc
             //    }
             //}
             #endregion
-
+            #region Bài 5:
+            //    input(out int a, out int b);
+            //    PrimeNumb(a ,b);
+            //}
+            //static void input(out int a , out int b)
+            //{
+            //    a =int.Parse(Console.ReadLine());
+            //    b =int.Parse(Console.ReadLine());
+            //}
+            //static void PrimeNumb(int a , int b)
+            //{
+            //    for(int i = 2; i < a; i++)
+            //    {
+            //        if (IsPrimeNumb(i))
+            //        {
+            //            Console.WriteLine(i);
+            //        }
+            //    }
+            //    bool IsPrimeNumb(int c)
+            //    {
+            //        for (int i = 2; i <= Math.Sqrt(c); i++)
+            //        {
+            //            if (c < 2)
+            //            {
+            //                return false;
+            //            }
+            //            if (c % i == 0)
+            //            {
+            //                return false;
+            //            }
+            //        }
+            //        return true;
+            //    }
+            //}
+            #endregion
         }
     }
 }
