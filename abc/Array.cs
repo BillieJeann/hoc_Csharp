@@ -240,18 +240,25 @@ namespace abc
             //}
             #endregion
             #region Bài 7 :
-            int[] a = input();
-            int b = max(a);
-            int c = min(a);
-            if (Check(a))
+            while (true)
             {
-                mssg(b, c);
+                int[] a = input();
+                int b = max(a);
+                int c = min(a);
+                if (Check(a))
+                {
+                    max(a);
+                    min(a);
+                    mssg(b, c);
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.WriteLine("Khong co gia tri max or min");
+                    Console.WriteLine();
+                }
             }
-            else
-            {
-                Console.WriteLine("Khong co gia tri max or min");
-            }
-        }
+        }         
         static int[] input()
         {
             Console.Write("nhap gioi han cua mang : ");
@@ -261,9 +268,7 @@ namespace abc
             {
                 Console.Write($"nhap phan tu {i} : ");
                 array[i] = int.Parse(Console.ReadLine());
-            }                     
-            max(array);
-            min(array);                           
+            }                                                          
             return array;
         }
         static int max(int[] array)
