@@ -377,7 +377,41 @@ namespace abc
             //    Console.WriteLine();
             //}
             #endregion
-
+            #region Bài 9 :
+            //    input(out int[] array,out int n, out int x);           
+            //    Mssg(Appearence(array, x));
+            //}
+            //static int[] input(out int[] array,out int n , out int x)
+            //{
+            //     Console.Write("Nhap gioi han mang : ");
+            //     n = int.Parse(Console.ReadLine());
+            //     Console.Write("Nhap so x : ");
+            //     x = int.Parse(Console.ReadLine());
+            //     array = new int[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        array[i] = int.Parse(Console.ReadLine());
+            //    }
+            //    return array;
+            //}
+            //static int Appearence(int[] array, int x)
+            //{
+            //    int count = 0;
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        if (array[i] == x)
+            //        {
+            //            count++;
+            //        }
+            //    }
+            //    return count;
+            //}
+            //static void Mssg(int msg)
+            //{
+            //    Console.WriteLine($"So lan xuat hien cua x trong mang la : {msg}");
+            //}
+            #endregion
         }
     }
 }
