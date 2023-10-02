@@ -240,81 +240,145 @@ namespace abc
             //}
             #endregion
             #region Bài 7 :
-            while (true)
-            {
-                int[] a = input();
-                int b = max(a);
-                int c = min(a);
-                if (Check(a))
-                {
-                    max(a);
-                    min(a);
-                    mssg(b, c);
-                    Console.WriteLine();
-                }
-                else
-                {
-                    Console.WriteLine("Khong co gia tri max or min");
-                    Console.WriteLine();
-                }
-            }
-        }         
-        static int[] input()
-        {
-            Console.Write("nhap gioi han cua mang : ");
-            int n = int.Parse(Console.ReadLine());
-            int[] array = new int[n];
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write($"nhap phan tu {i} : ");
-                array[i] = int.Parse(Console.ReadLine());
-            }                                                          
-            return array;
+            //    while (true)
+            //    {
+            //        int[] a = input();
+            //        int b = max(a);
+            //        int c = min(a);
+            //        if (Check(a))
+            //        {
+            //            max(a);
+            //            min(a);
+            //            mssg(b, c);
+            //            Console.WriteLine();
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("Khong co gia tri max or min");
+            //            Console.WriteLine();
+            //        }
+            //    }
+            //}         
+            //static int[] input()
+            //{
+            //    Console.Write("nhap gioi han cua mang : ");
+            //    int n = int.Parse(Console.ReadLine());
+            //    int[] array = new int[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"nhap phan tu {i} : ");
+            //        array[i] = int.Parse(Console.ReadLine());
+            //    }                                                          
+            //    return array;
+            //}
+            //static int max(int[] array)
+            //{
+            //    int max = array[0];
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        if (array[i] > max)
+            //        {
+            //           max = array[i];
+            //        }
+            //    }          
+            //    return max;
+            //}
+            //static int min(int[] array)
+            //{
+            //    int min = array[0];
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        if (min > array[i])
+            //        {
+            //            min = array[i];
+            //        }
+            //    }
+            //    return min;
+            //}
+            //static void mssg(int msgMax, int msgMin)
+            //{
+            //    Console.Write($"gia tri lon nhat trong mang la : {msgMax}");
+            //    Console.WriteLine();
+            //    Console.Write($"Gia tri nho nhat cua mang la : {msgMin}");
+            //    Console.WriteLine();
+            //}
+            //static bool Check(int[] array)
+            //{
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        if (array[0] != array[i])
+            //        {
+            //            return true;
+            //        }
+            //    }
+            //    return false;
+            //}
+            #endregion
+            #region Bài 8 :
+            //    int[] a = input();
+            //    int b = FindMax(a);
+            //    int c = FindMin(a);
+            //    scdMaxandMin(a, b ,c);            
+            //}
+            //static int[] input()
+            //{
+            //    Console.Write("Nhap gioi han mang : ");
+            //    int n = int.Parse(Console.ReadLine());
+            //    int[] array = new int[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        array[i] = int.Parse(Console.ReadLine());
+            //    }
+            //    return array;
+            //}
+            //static int FindMax(int[] array)
+            //{
+            //    int max = array[0];
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        if (array[i] > max)
+            //        {
+            //            max = array[i];
+            //        }
+            //    }
+            //    return max;
+            //}
+            //static int FindMin(int[] array)
+            //{
+            //    int min = array[0];
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        if (array[i] < min)
+            //        {
+            //            min = array[i];
+            //        }
+            //    }
+            //    return min;
+            //}
+            //static void scdMaxandMin(int[] array,  int max,  int min)
+            //{          
+            //    int scdMax = min;
+            //    int scdMin = max;
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        if ((array[i] != max) && array[i] > scdMax)
+            //        {
+            //            scdMax = array[i];
+            //        }
+            //        if (array[i] != min && array[i] < scdMin)
+            //        {
+            //            scdMin = array[i];
+            //        }                              
+            //    }
+            //    Console.Write($"So lon thu 2 trong mang la : {scdMax}");
+            //    Console.WriteLine();
+            //    Console.Write($"So nho thu 2 trong mang la : {scdMin}");
+            //    Console.WriteLine();
+            //}
+            #endregion
+
         }
-        static int max(int[] array)
-        {
-            int max = array[0];
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] > max)
-                {
-                   max = array[i];
-                }
-            }          
-            return max;
-        }
-        static int min(int[] array)
-        {
-            int min = array[0];
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (min > array[i])
-                {
-                    min = array[i];
-                }
-            }
-            return min;
-        }
-        static void mssg(int msgMax, int msgMin)
-        {
-            Console.Write($"gia tri lon nhat trong mang la : {msgMax}");
-            Console.WriteLine();
-            Console.Write($"Gia tri nho nhat cua mang la : {msgMin}");
-            Console.WriteLine();
-        }
-        static bool Check(int[] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[0] != array[i])
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        #endregion
     }
-    
 }
 
