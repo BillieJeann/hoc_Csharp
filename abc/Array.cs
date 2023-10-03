@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -602,42 +603,80 @@ namespace abc
             //}
             //static int[] ShowOnce(int[] array)
             //{
-            //    for (int i = 0; i < array.Length - 1; i++)
+            //    for (int i = 0; i < array.Length ; i++)
             //    {
-            //        for (int j = i + 1; j < array.Length; j++)
+            //        if (Check(array, i, array[i]))
             //        {
-            //            if (Check(array[i], array[j]))
-            //            {
-            //                int value = -1;
-            //                array[i] = array[j];
-            //                array[j] = value;
-            //            }
-            //        }
-            //    }
-            //    Console.Write("Mang new : ");
-            //    for (int i = 0; i < array.Length; i++)
-            //    {
-            //        if (array[i] < 0)
-            //        {
-            //            Console.Write("");
-            //        }
-            //        else
-            //        {
-            //            Console.Write(array[i] + " ");                   
+            //            Console.Write(array[i] + " ");
             //        }
             //    }
             //    Console.WriteLine();
             //    return array;
             //}
-            //static bool Check(int arrayi, int arrayj)
+            //static bool Check(int[] array , int current , int value)
             //{
-            //    if (arrayi != arrayj)
+            //    for (int i = 0; i < current; i++)
             //    {
-            //        return false;
+            //        if (array[i] == value)
+            //        {
+            //            return false;
+            //        }
             //    }
             //    return true;
             //}
             #endregion
+            #region Bài 15:
+            //    input(out int[] array , out int n);
+            //    Appearence(array);
+            //} 
+            //static int[] input(out int[] array , out int n)
+            //{
+            //    Console.Write("Nhap so phan tu cua mang : ");
+            //     n = Convert.ToInt32(Console.ReadLine());
+            //     array = new int[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        array[i] = Convert.ToInt32(Console.ReadLine());
+            //    }
+            //    return array;
+            //}
+            //static void Appearence(int[] array)
+            //{
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        if (Check(array, i, array[i]))
+            //        {
+            //            Console.WriteLine($"Gia tri {array[i]} xuat hien : {Count(array, array[i])} lan ");
+            //        }
+            //    }          
+            //}
+            // static bool Check(int[]array,int current,int value)// Mảng lấy giá trị array[i] đầu tiên
+            // {          
+            //    for(int i = 0; i < current; i++)
+            //    {
+            //        if (array[i] == value)
+
+            //        {
+            //            return false;
+            //        }
+            //    }   
+            //    return true;
+            // }
+            //static int Count(int[] array,int value)// Mảng đếm số lần lặp lại của array[i]
+            //{
+            //    int count = 0;
+            //    for (int i = 0; i < array.Length; i++)
+            //    {                
+            //        if (array[i] == value)
+            //        {
+            //           count++;
+            //        }
+            //    }
+            //    return count;
+            //}
+            #endregion
+
         }
     }
 }
