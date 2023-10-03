@@ -412,7 +412,237 @@ namespace abc
             //    Console.WriteLine($"So lan xuat hien cua x trong mang la : {msg}");
             //}
             #endregion
+            #region Bài 10:
+            //    input(out int[] array, out int n, out int k);
+            //    Mssg(EvenOutk(array, k));
+            //}
+            //static int[] input(out int[] array, out int n, out int k)
+            //{
+            //    Console.Write("Nhap so phan tu trong mang : ");
+            //    n = int.Parse(Console.ReadLine());
+            //    Console.Write("Nhap so k : ");
+            //    k = int.Parse(Console.ReadLine());
+            //    if (n < 0 || k == 0)
+            //    {
+            //        Console.Write("Invalid");
+            //    }          
+            //    array = new int[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        array[i] = int.Parse(Console.ReadLine());   
+            //    }
+            //    return array;
+            //}
+            //static int EvenOutk(int[] array, int k)
+            //{
+            //    int count = 0;
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        if (array[i] % k == 0)
+            //        {
+            //            count++;
+            //        }
+            //    }
+            //    return count;
+            //}
+            //static void Mssg(int msg)
+            //{
+            //    Console.Write($"Co {msg} phan tu chia het cho k ");
+            //    Console.WriteLine();
+            //}
+            #endregion
+            #region Bài 11:
+            //    input(out int[] array, out int n);
+            //    if (isSemetryArray(array))
+            //    {
+            //        Console.Write("Yes");
+            //    }
+            //    else
+            //    {
+            //        Console.Write("No");
+            //    }
+            //    Console.WriteLine();
+            //}
+            //static int[] input(out int[] array, out int n)
+            //{
+            //    Console.Write("Nhap so phan tu cua mang : ");
+            //    n = Convert.ToInt32(Console.ReadLine());
+            //    array = new int[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        array[i] = Convert.ToInt32(Console.ReadLine());
+            //    }
+            //    return array;
+            //}
+            //static bool isSemetryArray(int[] array)
+            //{
+            //    for (int i = 0; i < array.Length / 2; i++)
+            //    {
+            //        if (array[i] != array[array.Length - 1 - i])
+            //        {
+            //            return false;
+            //        }
+            //    }
+            //    return true;
+            //}
+            #endregion
+            #region Bài 12:
+            //    input(out int[] array, out int n);
+            //    SortArrayIncrease(array);          
+            //}
+            //static int[] input(out int[] array , out int n)
+            //{
+            //     Console.Write("Nhap so phan tu cua mang : ");
+            //     n = Convert.ToInt32(Console.ReadLine());
+            //     array = new int[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        array[i] = Convert.ToInt32(Console.ReadLine());              
+            //    }
+            //    Console.Write("Mang truoc khi sap xep la :");
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        Console.Write(" " + array[i]);
+            //    }
+            //    Console.WriteLine();
+            //    return array;
+            //}
+            //static int[] SortArrayIncrease(int[] array)
+            //{          
+            //    for (int i = 0; i < array.Length - 1; i++)
+            //    {
+            //        for (int j = i + 1; j < array.Length; j++)
+            //        {
+            //            if (array[i] > array[j])
+            //            {
+            //                int newPos = array[i]; // Tạo biến để lưu trữ giá trị hiện tại của array[i]
+            //                array[i] = array[j]; // Gán array[i] = giá trị của array[j]
+            //                array[j] = newPos; // Gán giá trị trước đó của array[i] cho array[j]
+            //            }
+            //        }
+            //    }
+            //    Console.Write("Mang sau sap xep la : ");
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        Console.Write(array[i] + " ");
+            //    }
+            //    Console.WriteLine();
+            //    return array;
+            //}
+            #endregion
+            #region Bài 13: 
+            //    input(out double[] array, out int n);
+            //    SortArrayDecrease(array);
+            //}
+            //static double[] input(out double[] array, out int n)
+            //{
+            //    Console.Write("Nhap so phan tu trong mang : ");
+            //    n = Convert.ToInt32(Console.ReadLine());
+            //    array = new double[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        array[i] = Convert.ToDouble(Console.ReadLine());
+            //    }
+            //    Console.Write("Mang truoc khi sap xep la : ");
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write(array[i] + " ");
+            //    }
+            //    Console.WriteLine();
+            //    return array;
+            //}
+            //static double[] SortArrayDecrease(double[] array)
+            //{
+            //    for (int i = 0; i < array.Length - 1; i++)
+            //    {
+            //        for (int j = i + 1; j < array.Length; j++)
+            //        {
+            //            if (array[i] < array[j])
+            //            {
+            //                double newPos = array[i];
+            //                array[i] = array[j];
+            //                array[j] = newPos;
+            //            }
+            //        }
+            //    }
+            //    Console.Write("Mang sau sap xep la : ");
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        Console.Write(array[i] + " ");
+            //    }
+            //    Console.WriteLine();
+            //    return array;
+            //}
+            #endregion
+            #region Bài 14:
+            //    input(out int[] array, out int n);
+            //    ShowOnce(array);
+            //}
+            //static int[] input(out int[] array, out int n)
+            //{
+            //    Console.Write("Nhap so phan tu trong mang : ");
+            //    n = Convert.ToInt32(Console.ReadLine());
+            //    array = new int[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        array[i] = Convert.ToInt32(Console.ReadLine());
+            //    }
+            //    Console.Write("Cac gia tri trong mang la : ");
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write(array[i] + " ");
+            //    }
+            //    Console.WriteLine();
+            //    return array;
+            //}
+            //static int[] ShowOnce(int[] array)
+            //{
+            //    for (int i = 0; i < array.Length - 1; i++)
+            //    {
+            //        for (int j = i + 1; j < array.Length; j++)
+            //        {
+            //            if (Check(array[i], array[j]))
+            //            {
+            //                int value = -1;
+            //                array[i] = array[j];
+            //                array[j] = value;
+            //            }
+            //        }
+            //    }
+            //    Console.Write("Mang new : ");
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        if (array[i] < 0)
+            //        {
+            //            Console.Write("");
+            //        }
+            //        else
+            //        {
+            //            Console.Write(array[i] + " ");                   
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //    return array;
+            //}
+            //static bool Check(int arrayi, int arrayj)
+            //{
+            //    if (arrayi != arrayj)
+            //    {
+            //        return false;
+            //    }
+            //    return true;
+            //}
+            #endregion
         }
     }
 }
+
+
+
+
 
