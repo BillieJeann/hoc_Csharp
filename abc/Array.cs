@@ -580,102 +580,182 @@ namespace abc
             //}
             #endregion
             #region Bài 14:
-        //    input(out int[] array, out int n);
-        //    ShowOnce(array);
+            //    input(out int[] array, out int n);
+            //    ShowOnce(array);
+            //}
+            //static int[] input(out int[] array, out int n)
+            //{
+            //    Console.Write("Nhap so phan tu trong mang : ");
+            //    n = Convert.ToInt32(Console.ReadLine());
+            //    array = new int[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        array[i] = Convert.ToInt32(Console.ReadLine());
+            //    }
+            //    Console.Write("Cac gia tri trong mang la : ");
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write(array[i] + " ");
+            //    }
+            //    Console.WriteLine();
+            //    return array;
+            //}
+            //static void ShowOnce(int[] array)
+            //{
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        if (Check(array, i, array[i]))
+            //        {
+            //            Console.Write(array[i] + " ");
+            //        }
+            //    }
+            //    Console.WriteLine();           
+            //}
+            //static bool Check(int[] array, int current, int value)
+            //{
+            //    for (int i = 0; i < current; i++)
+            //    {
+            //        if (array[i] == value)
+            //        {
+            //            return false;
+            //        }
+            //    }
+            //    return true;
+            //}
+            #endregion
+            #region Bài 15:
+            //    input(out int[] array , out int n);
+            //    Appearence(array);
+            //} 
+            //static int[] input(out int[] array , out int n)
+            //{
+            //    Console.Write("Nhap so phan tu cua mang : ");
+            //     n = Convert.ToInt32(Console.ReadLine());
+            //     array = new int[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        array[i] = Convert.ToInt32(Console.ReadLine());
+            //    }
+            //    return array;
+            //}
+            //static void Appearence(int[] array)
+            //{
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        if (Check(array, i, array[i]))
+            //        {
+            //            Console.WriteLine($"Gia tri {array[i]} xuat hien : {Count(array, array[i])} lan ");
+            //        }
+            //    }          
+            //}
+            // static bool Check(int[]array,int current,int value)// Mảng lấy giá trị array[i] đầu tiên
+            // {          
+            //    for(int i = 0; i < current; i++)
+            //    {
+            //        if (array[i] == value)
+
+            //        {
+            //            return false;
+            //        }
+            //    }   
+            //    return true;
+            // }
+            //static int Count(int[] array,int value)// Mảng đếm số lần lặp lại của array[i]
+            //{
+            //    int count = 0;
+            //    for (int i = 0; i < array.Length; i++)
+            //    {                
+            //        if (array[i] == value)
+            //        {
+            //           count++;
+            //        }
+            //    }
+            //    return count;
+            //}
+            #endregion
+            #region Bài 16:
+            //    input(out int[] array, out int n);
+            //    ABC(array);
+            //}
+            //static int[] input(out int[] array, out int n)
+            //{
+            //    Console.Write("Nhap so phan tu cua mang : ");
+            //    n = Convert.ToInt32(Console.ReadLine());
+            //    array = new int[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        array[i] = Convert.ToInt32(Console.ReadLine());
+            //    }
+            //    return array;
+            //}
+            //static void ABC(int[] array)
+            //{
+
+            //    for (int i = 0; i < array.Length; i++)
+            //    {
+            //        for (int j =  1; j < i; j++)
+            //        {
+            //            if (array[j] - 1 == array[i])
+            //            {                        
+            //                array[i] = array[j];
+            //            }
+            //            else
+            //            {                       
+            //                break;
+            //            }
+            //        }
+            //    }
+            //}
+            #endregion
+            #region Bài 17:
+        //    ArrayA(out int[] arrayA, out int n);
+        //    ArrayB(out int[] arrayB, out int k);
+        //    Combine(arrayA, arrayB, n, k);
         //}
-        //static int[] input(out int[] array, out int n)
+        //static int[] ArrayA(out int[] arrayA, out int n)
         //{
-        //    Console.Write("Nhap so phan tu trong mang : ");
-        //    n = Convert.ToInt32(Console.ReadLine());
-        //    array = new int[n];
+        //    Console.Write("Nhap so phan tu cua mang A : ");
+        //    n = Convert.ToInt32(Console.ReadLine());    
+        //    arrayA = new int[n];
         //    for (int i = 0; i < n; i++)
         //    {
         //        Console.Write($"Nhap phan tu {i} : ");
-        //        array[i] = Convert.ToInt32(Console.ReadLine());
+        //        arrayA[i] = Convert.ToInt32(Console.ReadLine());                
         //    }
-        //    Console.Write("Cac gia tri trong mang la : ");
-        //    for (int i = 0; i < n; i++)
+        //    return arrayA;
+        //}
+        //static int[] ArrayB(out int[] arrayB, out int k)
+        //{
+        //    Console.Write("Nhap so phan tu cua mang B : ");
+        //    k = Convert.ToInt32(Console.ReadLine());
+        //    arrayB = new int[k];
+        //    for (int i = 0; i < k; i++)
         //    {
-        //        Console.Write(array[i] + " ");
+        //        Console.Write($"Nhap phan tu {i} : ");
+        //        arrayB[i] = Convert.ToInt32(Console.ReadLine());
+        //    }
+        //    return arrayB;
+        //}
+        //static int[] Combine(int[] arrayA,int[] arrayB,int n ,int k)
+        //{
+        //    int[] combineArray = new int[n + k];
+        //    for (int i = 0; i < n ; i++)
+        //    {
+        //        combineArray[i] = arrayA[i];
+        //        Console.Write(combineArray[i] + " ");
+        //    }
+        //    for (int i = 0; i < k; i++)
+        //    {
+        //        combineArray[combineArray.Length - k + i] = arrayB[i];
+        //        Console.Write(combineArray[combineArray.Length - k + i] + " ");
         //    }
         //    Console.WriteLine();
-        //    return array;
-        //}
-        //static void ShowOnce(int[] array)
-        //{
-        //    for (int i = 0; i < array.Length; i++)
-        //    {
-        //        if (Check(array, i, array[i]))
-        //        {
-        //            Console.Write(array[i] + " ");
-        //        }
-        //    }
-        //    Console.WriteLine();           
-        //}
-        //static bool Check(int[] array, int current, int value)
-        //{
-        //    for (int i = 0; i < current; i++)
-        //    {
-        //        if (array[i] == value)
-        //        {
-        //            return false;
-        //        }
-        //    }
-        //    return true;
+        //    return combineArray;
         //}
         #endregion
-            #region Bài 15:
-        //    input(out int[] array , out int n);
-        //    Appearence(array);
-        //} 
-        //static int[] input(out int[] array , out int n)
-        //{
-        //    Console.Write("Nhap so phan tu cua mang : ");
-        //     n = Convert.ToInt32(Console.ReadLine());
-        //     array = new int[n];
-        //    for (int i = 0; i < n; i++)
-        //    {
-        //        Console.Write($"Nhap phan tu {i} : ");
-        //        array[i] = Convert.ToInt32(Console.ReadLine());
-        //    }
-        //    return array;
-        //}
-        //static void Appearence(int[] array)
-        //{
-        //    for (int i = 0; i < array.Length; i++)
-        //    {
-        //        if (Check(array, i, array[i]))
-        //        {
-        //            Console.WriteLine($"Gia tri {array[i]} xuat hien : {Count(array, array[i])} lan ");
-        //        }
-        //    }          
-        //}
-        // static bool Check(int[]array,int current,int value)// Mảng lấy giá trị array[i] đầu tiên
-        // {          
-        //    for(int i = 0; i < current; i++)
-        //    {
-        //        if (array[i] == value)
-
-        //        {
-        //            return false;
-        //        }
-        //    }   
-        //    return true;
-        // }
-        //static int Count(int[] array,int value)// Mảng đếm số lần lặp lại của array[i]
-        //{
-        //    int count = 0;
-        //    for (int i = 0; i < array.Length; i++)
-        //    {                
-        //        if (array[i] == value)
-        //        {
-        //           count++;
-        //        }
-        //    }
-        //    return count;
-        //}
-        #endregion
-
         }
     }
 }
