@@ -711,59 +711,57 @@ namespace abc
             //}
             #endregion
             #region Bài 17:
-            //    ArrayA(out int[] arrayA, out int n);
-            //    ArrayB(out int[] arrayB, out int k);
-            //    int[] a = Combine(arrayA, arrayB, n, k);
-            //    CombineArray(a);
-            //    Console.WriteLine();
-            //}
-            //static int[] ArrayA(out int[] arrayA, out int n)
-            //{
-            //    Console.Write("Nhap so phan tu cua mang A : ");
-            //    n = Convert.ToInt32(Console.ReadLine());
-            //    arrayA = new int[n];
-            //    for (int i = 0; i < n; i++)
-            //    {
-            //        Console.Write($"Nhap phan tu {i} : ");
-            //        arrayA[i] = Convert.ToInt32(Console.ReadLine());
-            //    }
-            //    return arrayA;
-            //}
-            //static int[] ArrayB(out int[] arrayB, out int k)
-            //{
-            //    Console.Write("Nhap so phan tu cua mang B : ");
-            //    k = Convert.ToInt32(Console.ReadLine());
-            //    arrayB = new int[k];
-            //    for (int i = 0; i < k; i++)
-            //    {
-            //        Console.Write($"Nhap phan tu {i} : ");
-            //        arrayB[i] = Convert.ToInt32(Console.ReadLine());
-            //    }
-            //    return arrayB;
-            //}
-            //static int[] Combine(int[] arrayA, int[] arrayB, int n, int k)
-            //{
-            //    int[] combineArray = new int[n + k];
-            //    for (int i = 0; i < n; i++)
-            //    {
-            //        combineArray[i] = arrayA[i];              
-            //    }
-            //    for (int i = 0; i < k; i++)
-            //    {
-            //        combineArray[combineArray.Length - k + i] = arrayB[i];               
-            //    }            
-            //    return combineArray;
-            //}
-            //static void CombineArray(int[] combineArray)
-            //{
-            //    Console.Write("Mang moi sau khi cong phan tu cua 2 mang la : ");
-            //    for (int i = 0; i < combineArray.Length; i++)
-            //    {
-            //        Console.Write(combineArray[i] + " ");
-            //    }
-            //}
-            #endregion
+            ArrayA(out int[] arrayA, out int n);
+            ArrayB(out int[] arrayB, out int k);           
+            CombineArray(Combine(arrayA, arrayB, n, k));
+            Console.WriteLine();
         }
+        static int[] ArrayA(out int[] arrayA, out int n)
+        {
+            Console.Write("Nhap so phan tu cua mang A : ");
+            n = Convert.ToInt32(Console.ReadLine());
+            arrayA = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"Nhap phan tu {i} : ");
+                arrayA[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            return arrayA;
+        }
+        static int[] ArrayB(out int[] arrayB, out int k)
+        {
+            Console.Write("Nhap so phan tu cua mang B : ");
+            k = Convert.ToInt32(Console.ReadLine());
+            arrayB = new int[k];
+            for (int i = 0; i < k; i++)
+            {
+                Console.Write($"Nhap phan tu {i} : ");
+                arrayB[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            return arrayB;
+        }
+        static int[] Combine(int[] arrayA, int[] arrayB, int n, int k)
+        {
+            int[] combineArray = new int[n + k];
+            for (int i = 0; i < n; i++)
+            {
+                combineArray[i] = arrayA[i];
+            }
+            for (int i = 0; i < k; i++)
+            {
+                combineArray[combineArray.Length - k + i] = arrayB[i];
+            }
+            return combineArray;
+        }
+        static void CombineArray(int[] combineArray)
+        {
+            Console.Write("Mang moi sau khi cong phan tu cua 2 mang la : ");
+            for (int i = 0; i < combineArray.Length; i++)
+            {
+                Console.Write(combineArray[i] + " ");
+            }
+        }
+        #endregion    
     }
     
 }
