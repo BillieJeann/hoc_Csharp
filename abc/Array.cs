@@ -6,9 +6,10 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace abc
 {
-    internal class Array
+    internal class mang
     {
         static void Main(string[] args)
         {
@@ -711,59 +712,183 @@ namespace abc
             //}
             #endregion
             #region Bài 17:
-            ArrayA(out int[] arrayA, out int n);
-            ArrayB(out int[] arrayB, out int k);           
-            CombineArray(Combine(arrayA, arrayB, n, k));
+            //    ArrayA(out int[] arrayA, out int n);
+            //    ArrayB(out int[] arrayB, out int k);           
+            //    CombineArray(Combine(arrayA, arrayB, n, k));
+            //    Console.WriteLine();
+            //}
+            //static int[] ArrayA(out int[] arrayA, out int n)
+            //{
+            //    Console.Write("Nhap so phan tu cua mang A : ");
+            //    n = Convert.ToInt32(Console.ReadLine());
+            //    arrayA = new int[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        arrayA[i] = Convert.ToInt32(Console.ReadLine());
+            //    }
+            //    return arrayA;
+            //}
+            //static int[] ArrayB(out int[] arrayB, out int k)
+            //{
+            //    Console.Write("Nhap so phan tu cua mang B : ");
+            //    k = Convert.ToInt32(Console.ReadLine());
+            //    arrayB = new int[k];
+            //    for (int i = 0; i < k; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        arrayB[i] = Convert.ToInt32(Console.ReadLine());
+            //    }
+            //    return arrayB;
+            //}
+            //static int[] Combine(int[] arrayA, int[] arrayB, int n, int k)
+            //{
+            //    int[] combineArray = new int[n + k];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        combineArray[i] = arrayA[i];
+            //    }
+            //    for (int i = 0; i < k; i++)
+            //    {
+            //        combineArray[combineArray.Length - k + i] = arrayB[i];
+            //    }
+            //    return combineArray;
+            //}
+            //static void CombineArray(int[] combineArray)
+            //{
+            //    Console.Write("Mang moi sau khi cong phan tu cua 2 mang la : ");
+            //    for (int i = 0; i < combineArray.Length; i++)
+            //    {
+            //        Console.Write(combineArray[i] + " ");
+            //    }
+            //}
+            #endregion                }
+            #region Bài 18:
+            //    Console.Write("Moi ban khai bao mang A : ");
+            //    ArrayA(out int[] arrayA, out int n);
+            //    Console.Write("Moi ban khai bao mang B : ");
+            //    ArrayB(out int[] arrayB, out int k);         
+            //    int[] d = NewArray(arrayA, arrayB);            
+            //    Console.Write("Mang moi sau khi sap xep la : ");
+            //    Print(SortArray(d));
+            //    Console.WriteLine();
+            //}
+            //static int[] ArrayA(out int[]arrayA,out int n)
+            //{
+            //    Console.Write("Nhap so phan tu cua mang A : ");
+            //    n = Convert.ToInt32(Console.ReadLine());
+            //    arrayA = new int[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($" Nhap phan tu {i} : ");
+            //        arrayA[i] = Convert.ToInt32(Console.ReadLine());
+            //    }
+            //    return arrayA;
+            //}
+            //static int[] ArrayB(out int[]arrayB,out int k)
+            //{
+            //    Console.Write("Nhap so phan tu cua mang B : ");
+            //    k = Convert.ToInt32(Console.ReadLine());
+            //    arrayB = new int[k];
+            //    for (int i = 0; i < k; i++)
+            //    {
+            //        Console.Write($" Nhap phan tu {i} : ");
+            //        arrayB[i] = Convert.ToInt32(Console.ReadLine());    
+            //    }
+            //    return arrayB;
+            //}
+            //static int[] NewArray(int[] arrayA, int[] arrayB)
+            //{
+            //    int[] newArray = new int[arrayA.Length + arrayB.Length];
+            //    for (int i = 0; i < arrayA.Length; i++)
+            //    {
+            //        newArray[i] = arrayA[i];
+
+            //    }
+            //    for (int i = 0; i < arrayB.Length; i++)
+            //    {
+            //        newArray[newArray.Length - arrayB.Length + i] = arrayB[i];
+            //    }          
+            //     return newArray;
+            //}
+            //static int[] SortArray(int[] newArray)
+            //{
+            //    for (int i = 0; i < newArray.Length - 1; i++)
+            //    {
+            //        for (int j = i + 1; j < newArray.Length; j++)
+            //        {
+            //            if (newArray[i] > newArray[j])
+            //            {
+            //                int temp = newArray[i];
+            //                newArray[i] = newArray[j];
+            //                newArray[j] = temp;
+            //            }
+            //        }
+            //    }
+            //    return newArray;
+            //}
+            //static void Print(int[] newArray)
+            //{
+            //    for (int i = 0; i < newArray.Length; i++)
+            //    {
+            //        Console.Write(newArray[i] + " ");
+            //    }
+            //}
+            #endregion
+            Console.Write("Nhap so phan tu cua mang A : ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            string[] arrayA = new string[n];
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"Nhap chuoi ky tu {i} : ");
+                arrayA[i] = Console.ReadLine();
+            }
+            Console.Write("Nhap so phan tu cua mang B : ");
+            int k = Convert.ToInt32(Console.ReadLine());
+            string[] arrayB = new string[k];
+            for (int i = 0; i < k; i++)
+            {
+                Console.Write($"Nhap chuoi ky tu {i} : ");
+                arrayB[i] = Console.ReadLine();
+            }
+           string[] d = NewArray(arrayA, arrayB);
+            SortedArray(d);
+        }
+        static string[] NewArray(string[] arrayA , string[] arrayB)
+        {
+            string[]newArray = new string[arrayA.Length + arrayB.Length];
+            int index = 0;
+            foreach (var item in arrayA)
+            {
+                newArray[index] = item;
+                index++;
+            }
+            foreach (var item in arrayB)
+            {
+                newArray[index] = item;
+                index++;
+            }
+            Console.Write("Mang moi la : ");
+            for (int i = 0; i < newArray.Length; i++)
+            {
+                Console.Write(newArray[i] + " ");
+            }
+            return newArray;
+        }
+        static void SortedArray(string[] newArray)
+        {
+            Array.Sort(newArray);
+            Array.Reverse(newArray);
+            Console.WriteLine();
+            Console.Write("Mang moi sau khi sap xep la : ");
+            for (int i = 0; i < newArray.Length; i++)
+            {
+                Console.Write(newArray[i] + " ");
+            }
             Console.WriteLine();
         }
-        static int[] ArrayA(out int[] arrayA, out int n)
-        {
-            Console.Write("Nhap so phan tu cua mang A : ");
-            n = Convert.ToInt32(Console.ReadLine());
-            arrayA = new int[n];
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write($"Nhap phan tu {i} : ");
-                arrayA[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            return arrayA;
-        }
-        static int[] ArrayB(out int[] arrayB, out int k)
-        {
-            Console.Write("Nhap so phan tu cua mang B : ");
-            k = Convert.ToInt32(Console.ReadLine());
-            arrayB = new int[k];
-            for (int i = 0; i < k; i++)
-            {
-                Console.Write($"Nhap phan tu {i} : ");
-                arrayB[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            return arrayB;
-        }
-        static int[] Combine(int[] arrayA, int[] arrayB, int n, int k)
-        {
-            int[] combineArray = new int[n + k];
-            for (int i = 0; i < n; i++)
-            {
-                combineArray[i] = arrayA[i];
-            }
-            for (int i = 0; i < k; i++)
-            {
-                combineArray[combineArray.Length - k + i] = arrayB[i];
-            }
-            return combineArray;
-        }
-        static void CombineArray(int[] combineArray)
-        {
-            Console.Write("Mang moi sau khi cong phan tu cua 2 mang la : ");
-            for (int i = 0; i < combineArray.Length; i++)
-            {
-                Console.Write(combineArray[i] + " ");
-            }
-        }
-        #endregion    
     }
-    
+
 }
 
 
