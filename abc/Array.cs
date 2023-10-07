@@ -835,57 +835,61 @@ namespace abc
             //    }
             //}
             #endregion
-            Console.Write("Nhap so phan tu cua mang A : ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            string[] arrayA = new string[n];
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write($"Nhap chuoi ky tu {i} : ");
-                arrayA[i] = Console.ReadLine();
-            }
-            Console.Write("Nhap so phan tu cua mang B : ");
-            int k = Convert.ToInt32(Console.ReadLine());
-            string[] arrayB = new string[k];
-            for (int i = 0; i < k; i++)
-            {
-                Console.Write($"Nhap chuoi ky tu {i} : ");
-                arrayB[i] = Console.ReadLine();
-            }
-           string[] d = NewArray(arrayA, arrayB);
-            SortedArray(d);
-        }
-        static string[] NewArray(string[] arrayA , string[] arrayB)
-        {
-            string[]newArray = new string[arrayA.Length + arrayB.Length];
-            int index = 0;
-            foreach (var item in arrayA)
-            {
-                newArray[index] = item;
-                index++;
-            }
-            foreach (var item in arrayB)
-            {
-                newArray[index] = item;
-                index++;
-            }
-            Console.Write("Mang moi la : ");
-            for (int i = 0; i < newArray.Length; i++)
-            {
-                Console.Write(newArray[i] + " ");
-            }
-            return newArray;
-        }
-        static void SortedArray(string[] newArray)
-        {
-            Array.Sort(newArray);
-            Array.Reverse(newArray);
-            Console.WriteLine();
-            Console.Write("Mang moi sau khi sap xep la : ");
-            for (int i = 0; i < newArray.Length; i++)
-            {
-                Console.Write(newArray[i] + " ");
-            }
-            Console.WriteLine();
+            #region Bài 19:
+        //    Console.Write("Nhap so phan tu cua mang A : ");
+        //    int n = Convert.ToInt32(Console.ReadLine());
+        //    string[] arrayA = new string[n];
+        //    for (int i = 0; i < n; i++)
+        //    {
+        //        Console.Write($"Nhap chuoi ky tu {i} : ");
+        //        arrayA[i] = Console.ReadLine();
+        //    }
+        //    Console.Write("Nhap so phan tu cua mang B : ");
+        //    int k = Convert.ToInt32(Console.ReadLine());
+        //    string[] arrayB = new string[k];
+        //    for (int i = 0; i < k; i++)
+        //    {
+        //        Console.Write($"Nhap chuoi ky tu {i} : ");
+        //        arrayB[i] = Console.ReadLine();
+        //    }
+        //   string[] d = NewArray(arrayA, arrayB);
+        //    SortedArray(d);
+        //}
+        //static string[] NewArray(string[] arrayA , string[] arrayB)
+        //{
+        //    string[]newArray = new string[arrayA.Length + arrayB.Length];
+        //    int index = 0;
+        //    foreach (var item in arrayA)
+        //    {
+        //        newArray[index] = item;
+        //        index++;
+        //    }
+        //    foreach (var item in arrayB)
+        //    {
+        //        newArray[index] = item;
+        //        index++;
+        //    }
+        //    Console.Write("Mang moi la : ");
+        //    for (int i = 0; i < newArray.Length; i++)
+        //    {
+        //        Console.Write(newArray[i] + " ");
+        //    }
+        //    return newArray;
+        //}
+        //static void SortedArray(string[] newArray)
+        //{
+        //    Array.Sort(newArray);
+        //    Array.Reverse(newArray);
+        //    Console.WriteLine();
+        //    Console.Write("Mang moi sau khi sap xep la : ");
+        //    for (int i = 0; i < newArray.Length; i++)
+        //    {
+        //        Console.Write(newArray[i] + " ");
+        //    }
+        //    Console.WriteLine();
+        //}
+        #endregion
+
         }
     }
 
