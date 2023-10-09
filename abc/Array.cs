@@ -836,63 +836,375 @@ namespace abc
             //}
             #endregion
             #region Bài 19:
-        //    Console.Write("Nhap so phan tu cua mang A : ");
+            //    Console.Write("Nhap so phan tu cua mang A : ");
+            //    int n = Convert.ToInt32(Console.ReadLine());
+            //    string[] arrayA = new string[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap chuoi ky tu {i} : ");
+            //        arrayA[i] = Console.ReadLine();
+            //    }
+            //    Console.Write("Nhap so phan tu cua mang B : ");
+            //    int k = Convert.ToInt32(Console.ReadLine());
+            //    string[] arrayB = new string[k];
+            //    for (int i = 0; i < k; i++)
+            //    {
+            //        Console.Write($"Nhap chuoi ky tu {i} : ");
+            //        arrayB[i] = Console.ReadLine();
+            //    }
+            //   string[] d = NewArray(arrayA, arrayB);
+            //    SortedArray(d);
+            //}
+            //static string[] NewArray(string[] arrayA , string[] arrayB)
+            //{
+            //    string[]newArray = new string[arrayA.Length + arrayB.Length];
+            //    int index = 0;
+            //    foreach (var item in arrayA)
+            //    {
+            //        newArray[index] = item;
+            //        index++;
+            //    }
+            //    foreach (var item in arrayB)
+            //    {
+            //        newArray[index] = item;
+            //        index++;
+            //    }
+            //    Console.Write("Mang moi la : ");
+            //    for (int i = 0; i < newArray.Length; i++)
+            //    {
+            //        Console.Write(newArray[i] + " ");
+            //    }
+            //    return newArray;
+            //}
+            //static void SortedArray(string[] newArray)
+            //{
+            //    Array.Sort(newArray);
+            //    Array.Reverse(newArray);
+            //    Console.WriteLine();
+            //    Console.Write("Mang moi sau khi sap xep la : ");
+            //    for (int i = 0; i < newArray.Length; i++)
+            //    {
+            //        Console.Write(newArray[i] + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            #endregion
+            #region Bài 20:
+            //    Console.WriteLine("Nhap mang A : ");
+            //    int n = Convert.ToInt32(Console.ReadLine());
+            //    string[] arrayA = new string[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        arrayA[i] = Console.ReadLine();
+            //    }
+            //    Console.Write("Nhap them phan tu : ");
+            //    string w = Console.ReadLine();
+            //    int k = Convert.ToInt32(Console.ReadLine());
+            //    NewArray(arrayA, w , k);
+            //}
+            //static void NewArray(string[] arrayA , string w , int k )
+            //{
+            //    string[] newArray = new string[arrayA.Length + 1];
+            //    int index = 0;
+            //    foreach (var item in arrayA)
+            //    {
+            //        newArray[index++] = item;
+            //    }
+            //    if(k > newArray.Length)
+            //    {
+            //        newArray[newArray.Length - 1] = w;
+            //    }
+            //    else if (k < 0)
+            //    {
+            //        for (int i = newArray.Length - 1; i > 0; i--)
+            //        {                 
+            //            newArray[i] = newArray[i - 1];
+            //        }
+            //        newArray[0] = w;
+            //    }
+            //    else
+            //    {
+            //        for (int i = newArray.Length -1 ; i >= k; i--)
+            //        {
+            //            newArray[i] = newArray[i - 1];
+            //            if (k == i)
+            //            {
+            //                newArray[i] = w;
+            //            }                   
+            //        }               
+            //    }
+            //    for (int i = 0; i < newArray.Length; i++)
+            //    {
+            //        Console.Write(newArray[i] + " ");               
+            //    }
+            //    Console.WriteLine();
+            //}
+            #endregion
+            #region Bài 21:
+            //    Console.Write("Nhap mang 1 : ");
+            //    int n = Convert.ToInt32(Console.ReadLine());
+            //    int[] array1 = new int[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        array1[i] = Convert.ToInt32(Console.ReadLine());
+            //    }
+            //    Console.Write("Nhap mang 2 : ");
+            //    int m = Convert.ToInt32(Console.ReadLine());
+            //    int[] array2 = new int[m];
+            //    for (int i = 0; i < m; i++)
+            //    {
+            //        Console.Write($"Nhap phan tu {i} : ");
+            //        array2[i] = Convert.ToInt32(Console.ReadLine());
+            //    }
+            //    Console.Write("Nhap so k : ");
+            //    int k = Convert.ToInt32(Console.ReadLine());
+            //    int[] array3 = new int[n+m];
+            //    int index = 0;
+            //    if (k <= 0)
+            //    {
+            //        foreach (var item in array2)
+            //        {
+            //            array3[index++] = item;
+            //        }
+            //        foreach (var item in array1)
+            //        {
+            //            array3[index++] = item;
+            //        }
+            //    }       
+            //    else if (k > n)
+            //    {
+            //        foreach (var item in array1)
+            //        {
+            //            array3[index++] = item;
+            //        }
+            //        foreach (var item in array2)
+            //        {
+            //            array3[index++] = item;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        for (int i = 0; i < array1.Length; i++)
+            //        {                   
+            //            if (k == i)
+            //            {
+            //                foreach (var item in array2)
+            //                {
+            //                    array3[index++] = item;
+            //                }
+            //            }
+            //            array3[index++] = array1[i];
+            //        }
+            //    }
+            //    NewArray(array3);
+            //}
+            //static void NewArray(int[] array3)
+            //{
+            //    for (int i = 0; i < array3.Length; i++)
+            //    {
+            //        Console.Write(array3[i] + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            #endregion
+            #region Bài 22:
+            //Console.Write("Nhap mang : ");
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //string[] array = new string[n];
+            //for (int i = 0; i < n; i++)
+            //{
+            //    Console.Write($"Nhap phan tu {i} : ");
+            //    array[i] = Console.ReadLine();
+            //}
+            //Array.Sort(array);
+            //Console.Write("Mang sau khi sap xep la : ");
+            //for (int i = 0; i < n; i++)
+            //{
+            //    Console.Write(array[i] + " ");
+            //}
+            //Console.WriteLine();
+            #endregion
+            #region Bài 23:
+            //Console.Write("Nhap mang : ");
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //string[] array = new string[n];
+            //for (int i = 0; i < n; i++)
+            //{
+            //    Console.Write($"Nhap phan tu {i}");
+            //    array[i] = Console.ReadLine();
+            //}
+            //for (int i = 0; i < array.Length - 1; i++)
+            //{
+            //    for (int j = i + 1; j < array.Length; j++)
+            //    {
+            //        char[] m = array[i].ToCharArray();
+            //        char[] g = array[j].ToCharArray();
+            //        if (m.Length > g.Length)
+            //        {
+            //            string temp = array[i];
+            //            array[i] = array[j];
+            //            array[j] = temp;
+            //        }
+            //    }
+            //}
+            //for (int i = 0; i < n; i++)
+            //{
+            //    Console.Write(array[i] + " ");
+            //}
+            //Console.WriteLine();
+            #endregion
+            #region Bài 24:
+            //Console.Write("Nhap mang : ");
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //string[] array = new string[n];
+            //int count = 0;
+            //for (int i = 0; i < n; i++)
+            //{
+            //    Console.Write($"Nhap {i} : ");
+            //    array[i] = Console.ReadLine();
+            //    count++;
+            //}
+            //Console.Write($"So tu trong xau vua nhap la : {count} ");
+            //Console.WriteLine();
+            #endregion
+            #region Bài 25:
+            //Console.Write("Nhap mang : ");
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //string[] array = new string[n];
+            //for (int i = 0; i < n; i++)
+            //{
+            //    Console.Write($"Nhap phan tu {i} : ");
+            //    array[i] = Console.ReadLine();
+            //}
+            //for (int i = 0; i < array.Length - 1; i++)
+            //{
+            //    for (int j = i + 1; j < array.Length; j++)
+            //    {
+            //        char[] m = array[i].ToCharArray();
+            //        char[] g = array[j].ToCharArray();
+            //        if (m.Length < g.Length)
+            //        {
+            //            string temp = array[i];
+            //            array[i] = array[j];
+            //            array[j] = temp;
+            //        }
+            //    }
+            //}
+            //for (int i = 0; i < n; i++)
+            //{
+            //    Console.Write(array[i] + " ");
+            //}
+            //Console.WriteLine();
+            #endregion
+            #region Bài 26:
+            //    Console.Write("Nhap mang : ");
+            //    int n = Convert.ToInt32(Console.ReadLine());
+            //    string[] array = new string[n];
+            //    for (int i = 0; i < n; i++)
+            //    {
+            //        Console.Write($"Nhap {i} : ");
+            //        array[i] = Console.ReadLine();
+            //    }
+            //    Console.Write("Nhap m : ");
+            //    string m = Console.ReadLine();
+            //    Console.Write(Check(array, m) ? "YES" : "NO");
+            //    Console.WriteLine();
+            //}
+            //static bool Check(string[] args, string m )
+            //{
+            //    for (int i = 0; i < args.Length; i++)
+            //    {
+            //        if (args[i] == m)
+            //        {
+            //            return true;
+            //        }
+            //    }
+            //    return false;
+            //}
+            #endregion
+            #region Bài 27:
+            //Console.Write("Nhap mang A : ");
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //string[] array1 = new string[n];
+            //for (int i = 0; i < n; i++)
+            //{
+            //    Console.Write($"Nhap {i} : ");
+            //    array1[i] = Console.ReadLine();
+            //}
+            //Console.Write("Nhap mang B : ");
+            //int m = Convert.ToInt32(Console.ReadLine());
+            //string[] array2 = new string[m];
+            //for (int i = 0; i < m; i++)
+            //{
+            //    Console.Write($"Nhap {i} : ");
+            //    array2[i] = Console.ReadLine();
+            //}
+            //for (int i = 0; i < n; i++)
+            //{
+            //    for (int j = 0; j < m; j++)
+            //    {
+            //        if (array1[i] == array2[j])
+            //        {
+            //            Console.Write(array1[i] + " ");
+            //        }
+            //    }
+            //}
+            //Console.WriteLine();
+            #endregion
+            #region Bài 28:
+        //    Console.Write("Nhap mang A : ");
         //    int n = Convert.ToInt32(Console.ReadLine());
-        //    string[] arrayA = new string[n];
+        //    string[] array1 = new string[n];
         //    for (int i = 0; i < n; i++)
         //    {
-        //        Console.Write($"Nhap chuoi ky tu {i} : ");
-        //        arrayA[i] = Console.ReadLine();
+        //        Console.Write($"Nhap {i} : ");
+        //        array1[i] = Console.ReadLine();
         //    }
-        //    Console.Write("Nhap so phan tu cua mang B : ");
-        //    int k = Convert.ToInt32(Console.ReadLine());
-        //    string[] arrayB = new string[k];
-        //    for (int i = 0; i < k; i++)
+        //    Console.Write("Nhap mang B : ");
+        //    int m = Convert.ToInt32(Console.ReadLine());
+        //    string[] array2 = new string[m];
+        //    for (int i = 0; i < m; i++)
         //    {
-        //        Console.Write($"Nhap chuoi ky tu {i} : ");
-        //        arrayB[i] = Console.ReadLine();
+        //        Console.Write($"Nhap {i} : ");
+        //        array2[i] = Console.ReadLine();
         //    }
-        //   string[] d = NewArray(arrayA, arrayB);
-        //    SortedArray(d);
-        //}
-        //static string[] NewArray(string[] arrayA , string[] arrayB)
-        //{
-        //    string[]newArray = new string[arrayA.Length + arrayB.Length];
+        //    string[] newArray = new string[n + m];
         //    int index = 0;
-        //    foreach (var item in arrayA)
+        //    foreach (var item in array1)
         //    {
-        //        newArray[index] = item;
-        //        index++;
+        //        newArray[index++] = item;
         //    }
-        //    foreach (var item in arrayB)
+        //    foreach (var item in array2)
         //    {
-        //        newArray[index] = item;
-        //        index++;
+        //        newArray[index++] = item;
         //    }
-        //    Console.Write("Mang moi la : ");
         //    for (int i = 0; i < newArray.Length; i++)
         //    {
-        //        Console.Write(newArray[i] + " ");
+        //        if (Check(newArray))
+        //        {
+        //            Console.Write(newArray[i] + " ");
+        //        }
         //    }
-        //    return newArray;
+        //    Console.WriteLine();
         //}
-        //static void SortedArray(string[] newArray)
+        //static bool Check(string[] newArray)
         //{
-        //    Array.Sort(newArray);
-        //    Array.Reverse(newArray);
-        //    Console.WriteLine();
-        //    Console.Write("Mang moi sau khi sap xep la : ");
-        //    for (int i = 0; i < newArray.Length; i++)
+        //    for (int i = 0; i < newArray.Length - 1 ; i++)
         //    {
-        //        Console.Write(newArray[i] + " ");
+        //        for (int j = i + 1; j < newArray.Length; j++)
+        //        {
+        //            if (newArray[i] == newArray[j])
+        //            {
+        //                return false;
+        //            }
+        //        }
         //    }
-        //    Console.WriteLine();
+        //    return true;
         //}
         #endregion
-
-        }
     }
-
 }
 
 
