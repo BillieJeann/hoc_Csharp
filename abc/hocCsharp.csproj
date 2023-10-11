@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2dimArray.cs" />
+    <Compile Include="Array.cs" />
     <Compile Include="baitapmethod.cs" />
     <Compile Include="doi_so_dat_ten_va_doi_so_tuy_chon.cs" />
+    <Compile Include="ham_cuc_bo.cs" />
     <Compile Include="nap_chong_pt.cs" />
     <Compile Include="tukhoa_ref_in_out.cs" />
     <Compile Include="dynamic.cs" />
