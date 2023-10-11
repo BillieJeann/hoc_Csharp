@@ -1,4 +1,6 @@
-﻿namespace abc
+﻿using System;
+
+namespace abc
 {
     internal class _2dimArray
     {
@@ -148,6 +150,110 @@
             //    Console.WriteLine();
             //}
             #endregion
+            #region Bài 4 :
+            //int[,] cross = new int[9, 13];
+            //for (int i = 0; i < cross.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < cross.GetLength(1); j++)
+            //    {
+            //        if ((i == 0 && j > 3 && j < 8) || (i == 8 && j > 3 && j < 8 )||
+            //            (i < 4 && j == 4)||(i < 4 && j == 7)||( i == 3 && j != 5 && j != 6)||
+            //            ( i == 5 && j != 5 && j!= 6)||( i == 4 && j == 0)||(i == 4 && j == 12)||
+            //            ( i > 5 && i < 8 && j == 4) || (i > 5 && i < 8 && j == 7))
+            //        {
+            //            Console.Write(" * ");
+            //        }
+            //        else
+            //        {
+            //            Console.Write("   ");
+            //        }                   
+            //    }
+            //    Console.WriteLine();
+            //}
+            #endregion
+            #region Bài 5 :
+            //Console.Write("Nhap hang m : ");
+            //int m = int.Parse(Console.ReadLine());
+            //Console.Write("Nhap cot n : ");
+            //int n = int.Parse(Console.ReadLine());           
+            //if (n <= 0 || m <= 0)
+            //{
+            //    Console.WriteLine("ERROR");
+            //}
+            //else
+            //{
+            //    int[,] recktangle = new int[m, n];
+            //    Console.WriteLine();
+            //    for (int i = 0; i < recktangle.GetLength(0); i++)
+            //    {
+            //        for (int j = 0; j < recktangle.GetLength(1); j++)
+            //        {
+            //            Console.Write(" * ");
+            //        }
+            //        Console.WriteLine();
+            //    }
+            //    Console.WriteLine();
+            //}
+            #endregion
+            #region Bài 6 :
+            //Console.Write("Nhap hang m : ");
+            //int m = int.Parse(Console.ReadLine());
+            //Console.Write("Nhap cot n : ");
+            //int n = int.Parse(Console.ReadLine());
+            //if (n <= 0 || m <= 0)
+            //{
+            //    Console.WriteLine("ERROR");
+            //}
+            //else
+            //{
+            //    int[,] recktangle = new int[m, n];
+            //    Console.WriteLine();
+            //    for (int i = 0; i < recktangle.GetLength(0); i++)
+            //    {
+            //        for (int j = 0; j < recktangle.GetLength(1); j++)
+            //        {
+            //            if (i > 0 && j == 0 || i > 0 && j == n - 1 || i < m - 1 && j == 0 || i < m - 1 && j == n - 1 || i == 0 || i == m - 1)
+            //            {
+            //                Console.Write(" * ");
+            //            }
+            //            else
+            //            {
+            //                Console.Write("   ");
+            //            }
+            //        }
+            //        Console.WriteLine();
+            //    }
+            //    Console.WriteLine();
+            //}
+            #endregion
+            #region Bài 7 :
+            //Console.Write("Nhap so h : ");
+            //int h = int.Parse(Console.ReadLine());
+            //if (h <= 0)
+            //{
+            //    Console.Write("Invalid");
+            //}
+            //else
+            //{
+            //    for (int i = 0; i < h; i++)
+            //    {
+            //        for (int j = 0; j < h; j++)
+            //        {
+            //            if (i >= j)
+            //            {
+            //                Console.Write(" * ");
+            //            }
+            //            else
+            //            {
+            //                Console.Write("   ");
+            //            }
+            //        }
+            //        Console.WriteLine();
+            //    }
+            //}
+            //Console.WriteLine();
+            #endregion
+
         }
     }
 }
