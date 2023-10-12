@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 
 namespace abc
 {
@@ -206,7 +207,7 @@ namespace abc
             //}
             //else
             //{
-            //    int[,] recktangle = new int[m, n];
+            //    string[,] recktangle = new string[m, n];
             //    Console.WriteLine();
             //    for (int i = 0; i < recktangle.GetLength(0); i++)
             //    {
@@ -214,12 +215,19 @@ namespace abc
             //        {
             //            if (i > 0 && j == 0 || i > 0 && j == n - 1 || i < m - 1 && j == 0 || i < m - 1 && j == n - 1 || i == 0 || i == m - 1)
             //            {
-            //                Console.Write(" * ");
+            //                recktangle[i, j] = " * ";
             //            }
             //            else
             //            {
-            //                Console.Write("   ");
+            //                recktangle[i, j] = "   ";
             //            }
+            //        }  
+            //    }
+            //    for (int i = 0; i < recktangle.GetLength(0); i++)
+            //    {
+            //        for (int j = 0; j < recktangle.GetLength(1); j++)
+            //        {
+            //            Console.Write(recktangle[i, j]);
             //        }
             //        Console.WriteLine();
             //    }
@@ -227,31 +235,36 @@ namespace abc
             //}
             #endregion
             #region Bài 7 :
-            //Console.Write("Nhap so h : ");
-            //int h = int.Parse(Console.ReadLine());
-            //if (h <= 0)
-            //{
-            //    Console.Write("Invalid");
-            //}
-            //else
-            //{
-            //    for (int i = 0; i < h; i++)
-            //    {
-            //        for (int j = 0; j < h; j++)
-            //        {
-            //            if (i >= j)
-            //            {
-            //                Console.Write(" * ");
-            //            }
-            //            else
-            //            {
-            //                Console.Write("   ");
-            //            }
-            //        }
-            //        Console.WriteLine();
-            //    }
-            //}
-            //Console.WriteLine();
+            Console.Write("Nhap so h : ");
+            int h = int.Parse(Console.ReadLine());
+            if (h <= 0)
+            {
+                Console.Write("Invalid");
+            }
+            else
+            {
+                string[][] triangle = new string[h][];    
+                for (int i = 0; i < triangle.Length; i++)
+                {
+                    triangle[i] = new string[i + 1];
+                   
+                }
+                for (int i = 0; i < triangle.Length; i++)
+                {
+                    for (int j = 0; j < triangle[i].Length; j++)
+                    {
+                        triangle[i][j] = "*";
+                    }                
+                }
+                for (int i = 0; i < triangle.Length; i++)
+                {
+                    for (int j = 0;  j < triangle[i].Length;  j++)
+                    {
+                        Console.Write(triangle[i][j]);
+                    }
+                    Console.WriteLine();
+                }
+            }         
             #endregion
         }
     }
