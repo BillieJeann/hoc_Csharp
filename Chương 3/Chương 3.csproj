@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C365AFC1-EC0A-43D5-8B40-6CF04EFFEA4F}</ProjectGuid>
+    <ProjectGuid>{BBB15614-8FFF-4B70-A087-D4C704068CB2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>abc</RootNamespace>
-    <AssemblyName>abc</AssemblyName>
+    <RootNamespace>Chương_3</RootNamespace>
+    <AssemblyName>Chương 3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,16 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="2dimArray.cs" />
-    <Compile Include="Array.cs" />
-    <Compile Include="baitapmethod.cs" />
-    <Compile Include="doi_so_dat_ten_va_doi_so_tuy_chon.cs" />
-    <Compile Include="ham_cuc_bo.cs" />
-    <Compile Include="nap_chong_pt.cs" />
-    <Compile Include="tukhoa_ref_in_out.cs" />
     <Compile Include="dynamic.cs" />
     <Compile Include="kieudulieuobject.cs" />
-    <Compile Include="phuongthuc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tukhoavar.cs" />
     <Compile Include="vonglapfor.cs" />
