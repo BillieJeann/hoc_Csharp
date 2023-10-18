@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -12,9 +13,14 @@ namespace Chương_5
         static void Main(string[] args)
         {
             #region Bài 1 :
-            //    Input(out int[] arr, out int n);
-            //    FindMaxMin(arr, out int max, out int min);
-            //    Mssg(max, min);
+            //    do
+            //    {
+            //        Input(out int[] arr, out int n);
+            //        FindMaxMin(arr, out int max, out int min);
+            //        Mssg(max, min);
+            //        Console.Write("Nhap yes de tiep tuc : ");
+            //    }
+            //    while (Console.ReadLine().ToLower() == "yes");
             //}
             //private static void Mssg(int max, int min)
             //{
@@ -28,7 +34,7 @@ namespace Chương_5
             //    else
             //    {
             //        Console.WriteLine("Khong co gia tri max min ");
-            //    }          
+            //    }
             //}
             //private static void FindMaxMin(int[] arr, out int max, out int min)
             //{
@@ -50,9 +56,14 @@ namespace Chương_5
             //}
             #endregion
             #region Bài 2 :
-            //    Input(out int[] arr);
-            //    Find2ndMaxMin(arr, out int scdMax, out int scdMin);
-            //    Mssg(scdMin, scdMax);
+            //    do
+            //    {
+            //        Input(out int[] arr);
+            //        Find2ndMaxMin(arr, out int scdMax, out int scdMin);
+            //        Mssg(scdMin, scdMax);
+            //        Console.Write("Nhap yes de tiep tuc : ");
+            //    }
+            //    while (Console.ReadLine().ToLower() == "yes");
             //}
             //private static void Mssg(int scdMin, int scdMax)
             //{
@@ -77,7 +88,7 @@ namespace Chương_5
             //    {
             //        if (arr[i] > arr[0])
             //        {
-            //            scdMin = arr[i];                   
+            //            scdMin = arr[i];
             //        }
             //    }
             //    for (int i = 0; i < arr.Length; i++)
@@ -100,20 +111,25 @@ namespace Chương_5
             //}
             #endregion
             #region Bài 3 : 
-            //    Input(out int[] arr, out int n, out int x);
-            //    int a = (CountAppearence(arr, x));
-            //    Mssg(a);
+            //    do
+            //    {
+            //        Input(out int[] arr, out int n, out int x);
+            //        int a = (CountAppearence(arr, x));
+            //        Mssg(a);
+            //        Console.Write("Nhap yes de tiep tuc : ");
+            //    }
+            //    while (Console.ReadLine().ToLower() == "yes");
             //}
 
             //private static void Mssg(int x)
             //{
-            //    Console.Write(x == 0 ? "No value" : "So lan xuat hien cua x la : " + x) ;
+            //    Console.Write(x == 0 ? "No value" : "So lan xuat hien cua x la : " + x);
             //    Console.WriteLine();
             //}
 
             //private static int CountAppearence(int[] arr, int x)
             //{
-            //  int count = 0;
+            //    int count = 0;
             //    foreach (var item in arr)
             //    {
             //        if (x == item)
@@ -135,13 +151,19 @@ namespace Chương_5
             //        arr[i] = int.Parse(Console.ReadLine());
             //    }
             //    Console.Write("Nhap so X : ");
-            //    x = int.Parse(Console.ReadLine()) ;
+            //    x = int.Parse(Console.ReadLine());
             //}
             #endregion
             #region Bài 4 :
-            //    Input(out int[] arr);
-            //    SortArray(arr);
-            //    ShowArray(arr);
+            //    do
+            //    {
+            //        Input(out int[] arr);
+            //        SortArray(arr);
+            //        ShowArray(arr);
+            //        Console.Write("Nhap yes de tiep tuc : ");
+            //    }
+            //    while (Console.ReadLine().ToLower() == "yes");
+
             //}
             //private static void ShowArray(int[] arr)
             //{
@@ -168,9 +190,15 @@ namespace Chương_5
             //}
             #endregion
             #region Bài 5 :
-            //    Input(out int[] arr);
-            //    ReverseArray(arr);
-            //    ShowArray(arr);
+            //    do
+            //    {
+            //        Input(out int[] arr);
+            //        ReverseArray(arr);
+            //        ShowArray(arr);
+            //        Console.Write("Nhap yes de tiep tuc : ");
+            //    }
+            //    while (Console.ReadLine().ToLower() == "yes");
+
             //}
             //private static void ShowArray(int[] arr)
             //{
@@ -198,8 +226,14 @@ namespace Chương_5
             //}
             #endregion
             #region Bài 6 :
-            //    Input(out int[] arr);
-            //    ShowArray(arr);           
+            //    do
+            //    {
+            //        Input(out int[] arr);
+            //        ShowArray(arr);
+            //        Console.Write("Nhap yes de tiep tuc : ");
+            //    }
+            //    while (Console.ReadLine().ToLower() == "yes");
+
             //}
             //private static void ShowArray(int[] arr)
             //{
@@ -230,13 +264,19 @@ namespace Chương_5
             //    arr = new int[element.Length];
             //    for (int i = 0; i < arr.Length; i++)
             //    {
-            //        arr[i] = int.Parse(element[i]);                
-            //    }        
+            //        arr[i] = int.Parse(element[i]);
+            //    }
             //}
             #endregion
             #region Bài 7 :
-            //    Input(out int[] arr);
-            //    CountApearence(arr);
+            //    do
+            //    {
+            //        Input(out int[] arr);
+            //        CountApearence(arr);
+            //        Console.Write("Nhap yes de tiep tuc : ");
+            //    }
+            //    while (Console.ReadLine().ToLower() == "yes");
+
             //}
             //private static void CountApearence(int[] arr)
             //{
@@ -253,9 +293,9 @@ namespace Chương_5
             //        if (CheckArray(arr, i, arr[i]))
             //        {
             //            Console.WriteLine(($"{arr[i]} : {count} "));
-            //        }                
-            //    }            
-            //}            
+            //        }
+            //    }
+            //}
             //private static bool CheckArray(int[] arr, int current, int v)
             //{
             //    for (int i = 0; i < current; i++)
@@ -279,7 +319,13 @@ namespace Chương_5
             //}
             #endregion
             #region Bài 8 :
-            //    Input(out int[] arr1, out int[] arr2);
+            //    do
+            //    {
+            //        Input(out int[] arr1, out int[] arr2);
+            //        Console.Write("Nhap yes de tiep tuc : ");
+            //    }
+            //    while (Console.ReadLine().ToLower() == "yes");
+
             //}
             //private static void Input(out int[] arr1, out int[] arr2)
             //{
@@ -296,7 +342,7 @@ namespace Chương_5
             //    for (int i = 0; i < arr2.Length; i++)
             //    {
             //        arr2[i] = int.Parse(element2[i]);
-            //    }                       
+            //    }
             //    int index = 0;
             //    foreach (var item in arr1)
             //    {
@@ -311,17 +357,23 @@ namespace Chương_5
             //    {
             //        Console.Write(arr1[i] + " ");
             //    }
-            //    Console.WriteLine();           
+            //    Console.WriteLine();
             //}
             #endregion
             #region Bài 9 :
-            //    Input(out int[] arr1, out int[] arr2);
-            //    NewCopyArray(out int[]newarr,arr1, arr2);
-            //    ShowArray(newarr);
+            //    do
+            //    {
+            //        Input(out int[] arr1, out int[] arr2);
+            //        NewCopyArray(out int[] newarr, arr1, arr2);
+            //        ShowArray(newarr);
+            //        Console.Write("Nhap yes de tiep tuc : ");
+            //    }
+            //    while (Console.ReadLine().ToLower() == "yes");
+
             //}
 
             //private static void ShowArray(int[] newarr)
-            //{           
+            //{
             //    foreach (var item in newarr)
             //    {
             //        Console.Write(item + " ");
@@ -329,7 +381,7 @@ namespace Chương_5
             //    Console.WriteLine();
             //}
 
-            //private static void NewCopyArray(out int[] newarr,int[] arr1, int[] arr2)
+            //private static void NewCopyArray(out int[] newarr, int[] arr1, int[] arr2)
             //{
             //    newarr = new int[arr1.Length + arr2.Length];
             //    arr1.CopyTo(newarr, 0);
@@ -352,7 +404,86 @@ namespace Chương_5
             //    for (int i = 0; i < arr2.Length; i++)
             //    {
             //        arr2[i] = int.Parse(element2[i]);
-            //    }                                  
+            //    }
+            //}
+            #endregion
+            #region Bài 10:
+            //    do
+            //    {
+            //        Input(out string[] arr);
+            //        SortAlphabet(arr);
+            //        Console.Write("Nhap yes de tiep tuc : ");
+            //    }
+            //    while (Console.ReadLine().ToLower() == "yes");         
+            //}
+
+            //private static void SortAlphabet(string[] arr)
+            //{
+            //    Array.Sort(arr);
+            //    foreach (var item in arr)
+            //    {
+            //        Console.Write(item + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            //private static void Input(out string[] arr)
+            //{
+            //    Console.Write("Nhap phan tu mang : ");
+            //    var element = Console.ReadLine().Split(' ');
+            //    arr = new string[element.Length];
+            //    for (int i = 0; i < arr.Length; i++)
+            //    {
+            //        arr[i] = element[i];
+            //    }
+            //}
+            #endregion
+            #region Bài 11:
+            //    do
+            //    {
+            //        Input(out string[] arr);
+            //        LengthSort(arr);
+            //        ShowArray(arr);
+            //        Console.Write("Ban co muon tiep tuc ? : ");                             
+            //    }
+            //    while (Console.ReadLine() == "yes");
+            //}
+            //private static void ShowArray(string[] arr)
+            //{
+            //    foreach (var item in arr)
+            //    {
+            //        Console.Write(item + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+
+            //private static void LengthSort(string[] arr)
+            //{
+            //    for (int i = 0; i < arr.Length - 1; i++)
+            //    {
+            //        for (int j = i + 1; j < arr.Length; j++)
+            //        {
+            //            char[] m = arr[i].ToCharArray();
+            //            char[] n = arr[j].ToCharArray();
+            //            if (m.Length > n.Length)
+            //            {
+            //                string tmp = arr[i];
+            //                arr[i] = arr[j];
+            //                arr[j] = tmp;
+            //            }
+            //        }
+            //    }
+            //}
+
+            //private static void Input(out string[] arr)
+            //{
+            //    Console.Write("Nhap cac phan tu mang : ");
+            //   var element = Console.ReadLine().Split(' ');
+            //    arr = new string[element.Length];
+            //    for (int i = 0; i < arr.Length; i++)
+            //    {
+            //        arr[i] = element[i];
+            //    }
             //}
             #endregion
         }
