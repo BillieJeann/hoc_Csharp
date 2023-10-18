@@ -7,7 +7,7 @@
     <ProjectGuid>{322D2EC7-332C-427B-B27D-7ED4B40BC8B0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Chương_5</RootNamespace>
-    <AssemblyName>Chương_5</AssemblyName>
+    <AssemblyName>Chương 5</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Array2.cs" />
+    <Compile Include="Array.cs" />
+    <Compile Include="Arrayclass.cs" />
+    <Compile Include="binarysearch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="quicksort.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
