@@ -696,19 +696,18 @@ namespace Chương_5
             //}
             #endregion
             #region Bài 16:
-            //    Input(out string[] arr1, out string[] arr2);
-            //    string[] newArr = CombineArray(arr1, arr2);
-            //    ShowArray(newArr);          
+            //    Input(out string[] arr1, out string[] arr2);        
+            //    ShowArray(arr1,arr2);
             //}
-            //private static void ShowArray(string[] newArr)
+            //private static void ShowArray(string[] arr1, string[] arr2)
             //{
-            //    for (int i = 0; i < newArr.Length; i++)
+            //    for (int i = 0; i < arr1.Length; i++)
             //    {
-            //        for (int j = i + 1; j < newArr.Length; j++)
+            //        for (int j = 0; j < arr2.Length; j++)
             //        {
             //            var check = () =>
             //            {
-            //                if (newArr[i].ToLower() != newArr[j].ToLower())
+            //                if (arr1[i].ToLower() != arr2[j].ToLower())
             //                {
             //                    return false;
             //                }
@@ -716,26 +715,12 @@ namespace Chương_5
             //            };
             //            if (check())
             //            {
-            //                Console.Write(newArr[i] + " ");
+            //                Console.Write(arr1[i] + " ");
             //            }
             //        }
             //    }
             //    Console.WriteLine();
-            //}
-            //private static string[] CombineArray(string[] arr1, string[] arr2)
-            //{
-            //    string[] newArr = new string[arr1.Length + arr2.Length];
-            //    int index = 0;
-            //    foreach (var item in arr1)
-            //    {
-            //        newArr[index++] = item;
-            //    }
-            //    foreach (var item in arr2)
-            //    {
-            //        newArr[index++] = item;
-            //    }
-            //    return newArr;
-            //}
+            //}      
             //private static void Input(out string[] arr1, out string[] arr2)
             //{
             //    Console.Write("Nhap cac phan tu mang 1 : ");
@@ -746,6 +731,68 @@ namespace Chương_5
             //        arr1[i] = element[i];
             //    }
             //    Console.Write("Nhap cac phan tu mang 2 : ");
+            //    var element2 = Console.ReadLine().Split(' ');
+            //    arr2 = new string[element2.Length];
+            //    for (int i = 0; i < arr2.Length; i++)
+            //    {
+            //        arr2[i] = element2[i];
+            //    }
+            //}
+            #endregion
+            #region Bài 17:
+            //    Input(out string[] arr1, out string[] arr2);          
+            //    ShowArray(arr1, arr2);
+            //}
+            //private static void ShowArray(string[] arr1, string[] arr2)
+            //{
+            //    for (int i = 0; i < arr1.Length; i++)
+            //    {              
+            //        var check = () =>
+            //        {
+            //            for (int j = 0; j < arr2.Length; j++)
+            //            {
+
+            //                if (arr1[i] == arr2[j])
+            //                {                           
+            //                    return false;
+            //                }                     
+            //            }
+            //            return true;
+            //        };
+            //        if(check())
+            //        {
+            //            Console.Write(arr1[i] + " ");
+            //        }
+            //    }
+            //    for (int i = 0; i < arr2.Length; i++)
+            //    {
+
+            //        var check = () =>
+            //        {
+            //            for (int j = 0; j < arr1.Length; j++)
+            //            {                       
+            //                if (arr2[i] == arr1[j])
+            //                {
+            //                    return false;
+            //                }
+            //            }
+            //            return true;
+            //        };
+            //        if (check())
+            //        {
+            //            Console.Write(arr2[i] + " ");
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}      
+            //private static void Input(out string[] arr1, out string[] arr2)
+            //{
+            //    var element = Console.ReadLine().Split(' ');
+            //    arr1 = new string[element.Length];
+            //    for (int i = 0; i < arr1.Length; i++)
+            //    {
+            //        arr1[i] = element[i];
+            //    }
             //    var element2 = Console.ReadLine().Split(' ');
             //    arr2 = new string[element2.Length];
             //    for (int i = 0; i < arr2.Length; i++)
