@@ -447,6 +447,313 @@ namespace Chương_5
             //    }
             //}
             #endregion
+            #region Bài 12:
+            //    Input(out int[] arr);
+            //    FindMin(arr);
+            //    FindMax(arr);
+            //}
+            //private static void FindMin(int[] arr)
+            //{
+            //    int min = arr[0];
+            //    for (int i = 0; i < arr.Length; i++)
+            //    {
+            //        var checkMin = () =>
+            //        {
+            //            if (arr[i] > min)
+            //            {
+            //                return false;
+            //            }
+            //            return true;
+            //        };
+            //        if (checkMin())
+            //        {
+            //            min = arr[i];
+            //        }
+            //    }
+            //    Console.Write($"Gia tri min la : {min} ");
+            //    Console.WriteLine();
+            //}
+            //private static void FindMax(int[] arr)
+            //{
+            //    int max = arr[0];
+            //    for (int i = 0; i < arr.Length; i++)
+            //    {
+            //        var checkMax = () =>
+            //        {
+            //            if (arr[i] < max)
+            //            {
+            //                return false;
+            //            }
+            //            return true;
+            //        };
+            //        if (checkMax())
+            //        {
+            //            max = arr[i];
+            //        }
+            //    }
+            //    Console.Write($"Gia tri max la : {max} ");
+            //    Console.WriteLine();
+            //}
+            //private static void Input(out int[] arr)
+            //{
+            //    Console.Write("Nhap cac phan tu cua mang : ");
+            //    var element = Console.ReadLine().Split(' ');
+            //    arr = new int[element.Length];
+            //    for (int i = 0; i < arr.Length; i++)
+            //    {
+            //        arr[i] = int.Parse(element[i]);
+            //    }
+            //}
+            #endregion
+            #region Bài 13:
+            //    Input(out int[] arr);
+            //    Array.Sort(arr);
+            //    int min = FindMin(arr);
+            //    int max = FindMax(arr);
+            //    int scdMin = 0;
+            //    int scdMax = 0;
+            //    for (int i = 1; i < arr.Length; i++)
+            //    {
+            //        var check = () =>
+            //        {
+            //            if (arr[i] > min)
+            //            {
+            //                return true;
+            //            }
+            //            return false;
+            //        };
+            //        if (check())
+            //        {
+            //            scdMin = arr[i];
+            //            break;
+            //        }
+            //    }
+            //    Console.Write(scdMin + " ");
+            //    for (int i = arr.Length - 1; i > 0 ; i--)
+            //    {
+            //        var check = () =>
+            //        {
+            //            if (arr[i] < max)
+            //            {
+            //                return true;
+            //            }
+            //            return false;
+            //        };
+            //        if (check())
+            //        {
+            //            scdMax = arr[i];
+            //            break;
+            //        }
+            //    }
+            //    Console.Write(scdMax + " ");
+            //    Console.WriteLine();
+            //}
+            //private static int FindMin(int[] arr)
+            //{
+            //    int min = arr[0];
+            //    for (int i = 0; i < arr.Length; i++)
+            //    {
+            //        var checkMin = () =>
+            //        {
+            //            if (arr[i] > min)
+            //            {
+            //                return false;
+            //            }
+            //            return true;
+            //        };
+            //        if (checkMin())
+            //        {
+            //            min = arr[i];
+            //        }
+            //    }
+            //    return min;
+            //}
+            //private static int FindMax(int[] arr)
+            //{
+            //    int max = arr[0];
+            //    for (int i = 0; i < arr.Length; i++)
+            //    {
+            //        var checkMax = () =>
+            //        {
+            //            if (arr[i] < max)
+            //            {
+            //                return false;
+            //            }
+            //            return true;
+            //        };
+            //        if (checkMax())
+            //        {
+            //            max = arr[i];
+            //        }
+            //    }
+            //    return max;
+            //}
+            //private static void Input(out int[] arr)
+            //{
+            //    Console.Write("Nhap cac phan tu cua mang : ");
+            //    var element = Console.ReadLine().Split(' ');
+            //    arr = new int[element.Length];
+            //    for (int i = 0; i < arr.Length; i++)
+            //    {
+            //        arr[i] = int.Parse(element[i]);
+            //    }
+            //}
+            #endregion
+            #region Bài 14:
+            //    Input(out int[] arr);
+            //    ShowArray(arr);           
+            //}
+            //private static void ShowArray(int[] arr)
+            //{
+            //    for (int i = 0; i < arr.Length; i++)
+            //    {
+            //        var check = () =>
+            //        {
+            //            for (int j = 0; j < i; j++)
+            //            {
+            //                if (arr[i] == arr[j])
+            //                {
+            //                    return false;
+            //                }
+            //            }
+            //            return true;
+            //        };
+            //        if (check())
+            //        {
+            //            Console.Write(arr[i] + " ");
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}
+            //private static void Input(out int[] arr)
+            //{
+            //    Console.Write("Nhap cac phan tu cua mang : ");
+            //   var element = Console.ReadLine().Split(' ');
+            //    arr = new int[element.Length];
+            //    for (int i = 0; i < arr.Length; i++)
+            //    {
+            //        arr[i] = int.Parse(element[i]);
+            //    }
+            //}
+            #endregion
+            #region Bài 15:
+            //    Input(out int[] arr1, out int[] arr2);
+            //    GetNewArray(arr1,arr2);
+            //}
+            //private static void GetNewArray(int[] arr1, int[] arr2)
+            //{
+            //    int[] newArr = new int[arr1.Length + arr2.Length];
+            //    int index = 0;
+            //    var combine = () =>
+            //    {
+            //        foreach (var item in arr1)
+            //        {
+            //            newArr[index++] = item;
+            //        }
+            //        foreach (var item in arr2)
+            //        {
+            //            newArr[index++] = item;
+            //        }
+            //    };
+            //    combine();
+            //    for (int i = 0; i < newArr.Length; i++)
+            //    {
+            //        for (int j = i + 1; j < newArr.Length; j++)
+            //        {
+            //            var check = () =>
+            //            {
+            //                if (newArr[i] < newArr[j])
+            //                {
+            //                    return false;
+            //                }
+            //                return true;
+            //            };
+            //            if(check())
+            //            {
+            //                int tmp = newArr[i];
+            //                newArr[i] = newArr[j];
+            //                newArr[j] = tmp;
+            //            }
+            //        }
+            //        Console.Write(newArr[i] + " ");
+            //    }
+            //    Console.WriteLine();
+            //}
+            //private static void Input(out int[] arr1, out int[] arr2)
+            //{
+            //    var element = Console.ReadLine().Split(' ');
+            //    arr1 = new int[element.Length];
+            //    for (int i = 0; i < arr1.Length; i++)
+            //    {
+            //        arr1[i] = int.Parse(element[i]);
+            //    }
+            //    var element2 = Console.ReadLine().Split(' ');
+            //    arr2 = new int[element2.Length];
+            //    for (int i = 0; i < arr2.Length; i++)
+            //    {
+            //        arr2[i] = int.Parse(element2[i]);   
+            //    }
+            //}
+            #endregion
+            #region Bài 16:
+            //    Input(out string[] arr1, out string[] arr2);
+            //    string[] newArr = CombineArray(arr1, arr2);
+            //    ShowArray(newArr);          
+            //}
+            //private static void ShowArray(string[] newArr)
+            //{
+            //    for (int i = 0; i < newArr.Length; i++)
+            //    {
+            //        for (int j = i + 1; j < newArr.Length; j++)
+            //        {
+            //            var check = () =>
+            //            {
+            //                if (newArr[i].ToLower() != newArr[j].ToLower())
+            //                {
+            //                    return false;
+            //                }
+            //                return true;
+            //            };
+            //            if (check())
+            //            {
+            //                Console.Write(newArr[i] + " ");
+            //            }
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}
+            //private static string[] CombineArray(string[] arr1, string[] arr2)
+            //{
+            //    string[] newArr = new string[arr1.Length + arr2.Length];
+            //    int index = 0;
+            //    foreach (var item in arr1)
+            //    {
+            //        newArr[index++] = item;
+            //    }
+            //    foreach (var item in arr2)
+            //    {
+            //        newArr[index++] = item;
+            //    }
+            //    return newArr;
+            //}
+            //private static void Input(out string[] arr1, out string[] arr2)
+            //{
+            //    Console.Write("Nhap cac phan tu mang 1 : ");
+            //    var element = Console.ReadLine().Split(' ');
+            //    arr1 = new string[element.Length];
+            //    for (int i = 0; i < arr1.Length; i++)
+            //    {
+            //        arr1[i] = element[i];
+            //    }
+            //    Console.Write("Nhap cac phan tu mang 2 : ");
+            //    var element2 = Console.ReadLine().Split(' ');
+            //    arr2 = new string[element2.Length];
+            //    for (int i = 0; i < arr2.Length; i++)
+            //    {
+            //        arr2[i] = element2[i];
+            //    }
+            //}
+            #endregion
         }
     }
 }
