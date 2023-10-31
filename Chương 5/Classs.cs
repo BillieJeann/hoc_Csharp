@@ -596,6 +596,336 @@ namespace Chương_5
     //    }
     //}
     #endregion
+    #region Bài 5 :
+    //public class Student
+    //{
+    //    public Student(int id, string firstName, string midName, string lastName, string ward, string city, double gpa, string major)
+    //    {
+    //        Id = id;
+    //        FirstName = firstName;
+    //        MidName = midName;
+    //        LastName = lastName;
+    //        Ward = ward;
+    //        City = city;
+    //        Gpa = gpa;
+    //        Major = major;
+    //    }
+    //    public int Id { get; set; }
+    //    public string FirstName { get; set; }
+    //    public string LastName { get; set; }
+    //    public string Ward { get; set; }
+    //    public string MidName { get; set; }
+    //    public string City { get; set; }
+    //    public double Gpa { get; set; }
+    //    public string Major { get; set; }
+    //    public void SapXepDiem(Student[] students, int index)
+    //    {
+    //        for (int i = 0; i < index; i++)
+    //        {
+    //            for (int j = i + 1; j < index; j++)
+    //            {
+    //                if (students[i].Gpa < students[j].Gpa)
+    //                {
+    //                    Student tmp = students[i];
+    //                    students[i] = students[j];
+    //                    students[j] = tmp;
+    //                }
+    //            }
+    //        }
+    //    }
+
+    //    public void SapXepTen(Student[] students, int index)
+    //    {
+    //        for (int i = 0; i < index; i++)
+    //        {
+    //            for (int j = i + 1; j < index; j++)
+    //            {
+    //                if (students[i].LastName.CompareTo(students[j].LastName) > 0)
+    //                {
+    //                    Student tmp = students[i];
+    //                    students[i] = students[j];
+    //                    students[j] = tmp;
+    //                }
+    //            }
+    //        }
+    //    }
+
+    //    internal void SapXepHo(Student[] students, int index)
+    //    {
+    //        for (int i = 0; i < index; i++)
+    //        {
+    //            for (int j = i + 1; j < index; j++)
+    //            {
+    //                if (students[i].FirstName.CompareTo(students[j].FirstName) < 0)
+    //                {
+    //                    Student tmp = students[i];
+    //                    students[i] = students[j];
+    //                    students[j] = tmp;
+    //                }
+    //            }
+    //        }
+    //    }
+    //    public void ShowStudent(Student[] students, int index)
+    //    {
+    //        var titleId = "Ma Sinh Vien";
+    //        var titleFirstName = "Ho";
+    //        var titleMidName = "Ten Dem";
+    //        var titleLastName = "Ten";
+    //        var titleWard = "Phuong";
+    //        var titleCity = "Thanh Pho";
+    //        var titleGpa = "Diem trung binh";
+    //        var titleMajor = "Chuyen Nganh";
+    //        Console.WriteLine($"{titleId,-20} {titleFirstName,-20} {titleMidName,-20} {titleLastName,-20} {titleWard,-20} {titleCity,-20} {titleGpa,-20} {titleMajor,-20} ");
+    //        for (int i = 0; i < index; i++)
+    //        {
+    //            Console.WriteLine($"{students[i].Id,-20} {students[i].FirstName,-20} {students[i].MidName,-20} {students[i].LastName,-20} {students[i].Ward,-20} {students[i].City,-20} {students[i].Gpa,-20} {students[i].Major,-20} ");
+    //        }
+    //    }
+
+    //    internal void TimKiemTen(Student[] students, int index, string searchName)
+    //    {
+    //        int tmp = 0;
+
+    //        Student[] searchedStudent = new Student[index];
+    //        for (int i = 0; i < index; i++)
+    //        {
+    //            if (students[i].LastName == searchName)
+    //            {
+    //                searchedStudent[tmp] = students[i];
+    //                tmp++;
+    //            }
+    //        }
+    //        ShowStudent(searchedStudent, tmp);
+    //    }
+
+    //    internal void TimKiemTinh(Student[] students, int index, string searchWard)
+    //    {
+    //        int tmp = 0;
+
+    //        Student[] searchedStudent = new Student[index];
+    //        for (int i = 0; i < index; i++)
+    //        {
+    //            if (students[i].Ward == searchWard)
+    //            {
+    //                searchedStudent[tmp] = students[i];
+    //                tmp++;
+    //            }
+    //        }
+    //        ShowStudent(searchedStudent, tmp);
+    //    }
+
+    //    internal void XoaSinhVien(Student[] students, ref int index, int searchId)
+    //    {
+    //        for (int i = 0; i < index; i++)
+    //        {
+    //            for (int j = 0; j < index; j++)
+    //            {
+    //                if (students[i].Id == searchId)
+    //                {
+    //                    students[j] = students[j + 1];
+    //                    index--;
+    //                }
+    //            }
+    //        }
+    //    }
+
+    //    internal void LietKeSinhVienTheoTinh(Student[] students, int index)
+    //    {
+    //        for (int i = 0; i < index; i++)
+    //        {
+    //            int count = 1;
+    //            for (int j = i + 1; j < index; j++)
+    //            {
+    //                if (students[i].City == students[j].City)
+    //                {
+    //                    count++;
+    //                }
+    //            }
+    //            if (CheckTinh(students, i, students[i].City))
+    //            {
+    //                Console.WriteLine($"{students[i].City} : {count}");
+    //            }
+    //        }
+    //    }
+
+    //    private bool CheckTinh(Student[] students, int current, string city)
+    //    {
+    //        for (int i = 0; i < current; i++)
+    //        {
+    //            if (students[i].City == city)
+    //            {
+    //                return false;
+    //            }
+    //        }
+    //        return true;
+    //    }
+
+    //    internal void SuaDiem(Student[] students, int index, int searchId)
+    //    {
+    //        for (int i = 0; i < index; i++)
+    //        {
+    //            if (students[i].Id == searchId)
+    //            {
+    //                Console.Write("Nhap so diem moi : ");
+    //                double newGpa = double.Parse(Console.ReadLine());
+    //                students[i].Gpa = newGpa;
+    //            }
+    //        }
+    //    }
+    //}
+    //public class New
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        Student[] students = new Student[100];
+    //        int index = 0;
+    //        int key;
+    //        bool end = true;
+
+    //        while (end)
+    //        {
+    //            Console.WriteLine("************************************************************");
+    //            Console.WriteLine("* 1.Them Sinh Vien");
+    //            Console.WriteLine("* 2.Danh sach sinh vien");
+    //            Console.WriteLine("* 3.Sap xep sinh vien theo diem giam dan");
+    //            Console.WriteLine("* 4.Sap xep sinh vien theo ten tang dan");
+    //            Console.WriteLine("* 5.Sap xep sinh vien theo ten/ho tang dan || Diem TB giam dan");
+    //            Console.WriteLine("* 6.Tim sinh vien theo ten");
+    //            Console.WriteLine("* 7.Tim sinh vien theo tinh");
+    //            Console.WriteLine("* 8.Xoa sinh vien theo ma");
+    //            Console.WriteLine("* 9.Liet ke sinh vien theo tinh");
+    //            Console.WriteLine("* 10.Sua diem sinh vien theo ma");
+    //            Console.WriteLine("* 11.End");
+    //            Console.WriteLine("************************************************************");
+
+    //            Console.WriteLine("Nhap lua chon : ");
+    //            key = int.Parse(Console.ReadLine());
+    //            switch (key)
+    //            {
+    //                case 1:
+    //                    students[index++] = ThemMoi();
+    //                    break;
+    //                case 2:
+    //                    students[0].ShowStudent(students, index);
+    //                    break;
+    //                case 3:
+    //                    students[0].SapXepDiem(students, index);
+    //                    break;
+    //                case 4:
+    //                    students[0].SapXepTen(students, index);
+    //                    break;
+    //                case 5:
+
+    //                    if (CheckDiem(students, students[0], index))
+    //                    {
+    //                        students[0].SapXepDiem(students, index);
+    //                    }
+    //                    else if (CheckTen(students, students[0], index))
+    //                    {
+    //                        students[0].SapXepTen(students, index);
+    //                    }
+    //                    else
+    //                    {
+    //                        students[0].SapXepHo(students, index);
+    //                    }
+    //                    break;
+    //                case 6:
+    //                    Console.Write("Nhap ten sinh vien can tim : ");
+    //                    string searchName = Console.ReadLine();
+    //                    students[0].TimKiemTen(students, index, searchName);
+    //                    break;
+    //                case 7:
+    //                    Console.Write("Nhap ten sinh vien can tim : ");
+    //                    string searchWard = Console.ReadLine();
+    //                    students[0].TimKiemTinh(students, index, searchWard);
+    //                    break;
+    //                case 8:
+    //                    Console.Write("Nhap ma sinh vien can xoa : ");
+    //                    int searchId = int.Parse(Console.ReadLine());
+    //                    students[0].XoaSinhVien(students, ref index, searchId);
+    //                    break;
+    //                case 9:
+    //                    students[0].LietKeSinhVienTheoTinh(students, index);
+    //                    break;
+    //                case 10:
+    //                    Console.Write("Nhap ma sinh vien can sua : ");
+    //                    searchId = int.Parse(Console.ReadLine());
+    //                    students[0].SuaDiem(students, index, searchId);
+    //                    break;
+    //                case 11:
+    //                    end = false;
+    //                    break;
+    //            }
+    //        }
+
+    //    }
+
+    //    private static bool CheckTen(Student[] students, Student studentOriginal, int index)
+    //    {
+    //        bool check = true;
+    //        for (int i = 1; i < index; i++)
+    //        {
+    //            if (studentOriginal.LastName == students[i].LastName)
+    //            {
+    //                check = false;
+    //            }
+    //        }
+    //        return check;
+    //    }
+
+    //    private static bool CheckDiem(Student[] students, Student studentOriginal, int index)
+    //    {
+    //        bool check = true;
+    //        for (int i = 1; i < index; i++)
+    //        {
+    //            if (studentOriginal.Gpa == students[i].Gpa)
+    //            {
+    //                check = false;
+    //            }
+    //        }
+    //        return check;
+    //    }
+
+    //    private static Student ThemMoi()
+    //    {
+    //        Console.Write("Nhap ma sinh vien : ");
+
+    //        int id = int.Parse(Console.ReadLine());
+
+    //        Console.Write("Nhap ho : ");
+
+    //        string firstName = Console.ReadLine();
+
+    //        Console.Write("Nhap ten dem : ");
+
+    //        string midName = Console.ReadLine();
+
+    //        Console.Write("Nhap ten : ");
+
+    //        string lastName = Console.ReadLine();
+
+    //        Console.Write("Nhap tinh thanh : ");
+
+    //        string ward = Console.ReadLine();
+
+    //        Console.Write("Nhap thanh pho : ");
+
+    //        string city = Console.ReadLine();
+
+    //        Console.Write("Nhap diem trung binh : ");
+
+    //        double gpa = double.Parse(Console.ReadLine());
+
+    //        Console.Write("Nhap chuyen nganh : ");
+
+    //        string major = Console.ReadLine();
+
+    //        Student student = new(id, firstName, midName, lastName, ward, city, gpa, major);
+
+    //        return student;
+    //    }
+    //}
+    #endregion
 }
 
 
