@@ -349,15 +349,21 @@ namespace Chương_5
             }
             return false;
         }
-        public double NapTien(NganHang nganHang, double tienNap)
+        public void NapTien(NganHang nganHang, double tienNap)
         {
             nganHang.Balance += tienNap;
-            return nganHang.Balance;
+            Console.WriteLine("Nap tien thanh cong");
         }
-        public double RutTien(NganHang nganHang, double tienRut)
+        public void RutTien(NganHang nganHang, double tienRut)
         {
             nganHang.Balance -= tienRut;
-            return nganHang.Balance;
+            Console.WriteLine("Rut tien thanh cong");
+        }
+        public void ChuyenTien(NganHang nganHang1, NganHang nganHang2, double tienChuyen)
+        {
+            nganHang1.Balance -= tienChuyen;
+            nganHang2.Balance += tienChuyen;
+            Console.WriteLine("Chuyen tien thanh cong ");
         }
     }
 
@@ -400,7 +406,6 @@ namespace Chương_5
                             }
                             else
                             {
-
                                 if (index - i == 1)
                                 {
                                     Console.WriteLine("Khong ton tai stk");
@@ -437,39 +442,114 @@ namespace Chương_5
                         {
                             if (nganHang[i].CheckStk(searchStk, nganHang[i]))
                             {
-                                Console.Write("Nhap ma PIN : ");
-                                int pinSearch = int.Parse(Console.ReadLine());
-                                while (pinSearch != nganHang[i].Pin)
-                                {
-                                    Console.Write("Ma PIN sai moi nhap lai : ");
-                                    pinSearch = int.Parse(Console.ReadLine());
-                                }
+                                QuyTrinhRutTien(nganHang, i);
 
-                                Console.Write("Nhap so tien muon rut : ");
-                                double amount = double.Parse(Console.ReadLine());
-                                while (amount > nganHang[i].Balance || nganHang[i].Balance - amount < 50000)
-                                {
-                                    Console.Write("Khong du so du moi nhap lai so tien : ");
-                                    amount = double.Parse(Console.ReadLine());
-                                }
+                                double amount = NhapSoTien(nganHang, i);
+
                                 nganHang[i].RutTien(nganHang[i], amount);
+
+                                break;
                             }
                             else
                             {
-
                                 if (index - i == 1)
                                 {
                                     Console.WriteLine("Khong ton tai stk");
                                 }
                             }
-
                         }
+                        break;
+                    case 5:
+                        Console.Write("Nhap so tai khoan nguon : ");
+                        searchStk = long.Parse(Console.ReadLine());
+                        for (int i = 0; i < index; i++)
+                        {
+                            if (nganHang[i].CheckStk(searchStk, nganHang[i]))
+                            {
+                                QuyTrinhRutTien(nganHang, i);
+
+                                double amount = NhapSoTien(nganHang, i);
+
+                                Console.Write("Nhap tai khoan dich : ");
+                                searchStk = long.Parse(Console.ReadLine());
+                                for (int j = 0; j < index; j++)
+                                {
+                                    if (nganHang[j].CheckStk(searchStk, nganHang[j]))
+                                    {
+                                        nganHang[i].ChuyenTien(nganHang[i], nganHang[j], amount);
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        if (index - j == 1)
+                                        {
+                                            Console.WriteLine("Khong ton tai stk dich");
+
+                                        }
+                                    }
+                                }
+                                break;
+                            }
+                            else
+                            {
+                                if (index - i == 1)
+                                {
+                                    Console.WriteLine("Khong ton tai stk nguon");
+                                }
+                            }
+                        }
+                        break;
+                    case 6:
+                        ShowDanhSach(nganHang, index);
+                        break;
+                    case 7:
+                        end = false;
                         break;
                 }
             }
 
         }
 
+        private static void ShowDanhSach(NganHang[] nganHang, int index)
+        {
+            var titleStk = "So Tai Khoan";
+            var titleName = "Ten Khach Hang";
+            var titleBalance = "So Du";
+            var titleBankName = "Ten Ngan Hang";
+            var titleValidMonth = "Thang Het Han";
+            var titleValidYear = "Nam Het Han";
+            var titlePin = "Ma PIN";
+            Console.WriteLine($"{titleStk,-30} {titleName,-30} {titleBalance,-30} {titleBankName,-30} {titleValidMonth,-30} {titleValidYear,-30} {titlePin,-30} ");
+            for (int i = 0; i < index; i++)
+            {
+                Console.WriteLine($"{nganHang[i].STK,-30} {nganHang[i].Name,-30} {nganHang[i].Balance,-30} {nganHang[i].BankName,-30} {nganHang[i].ValidMonth,-30} {nganHang[i].ValidYear,-30} {nganHang[i].Pin,-30} ");
+            }
+        }
+
+        private static bool QuyTrinhRutTien(NganHang[] nganHang, int index)
+        {
+            Console.Write("Nhap ma PIN : ");
+            int pinSearch = int.Parse(Console.ReadLine());
+            while (pinSearch != nganHang[index].Pin)
+            {
+                Console.Write("Ma PIN sai moi nhap lai : ");
+                pinSearch = int.Parse(Console.ReadLine());
+            }
+            return true;
+
+        }
+        public static double NhapSoTien(NganHang[] nganHang, int index)
+        {
+            double amount;
+            Console.Write("Nhap so tien : ");
+            amount = double.Parse(Console.ReadLine());
+            while (amount > nganHang[index].Balance || nganHang[index].Balance - amount < 50000)
+            {
+                Console.Write("Khong du so du moi nhap lai so tien : ");
+                amount = double.Parse(Console.ReadLine());
+            }
+            return amount;
+        }
         private static NganHang ThemMoi()
         {
             Console.Write("Nhap stk moi : ");
