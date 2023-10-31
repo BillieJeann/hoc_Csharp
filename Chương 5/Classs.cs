@@ -478,7 +478,7 @@ namespace Chương_5
     //                                if (nganHang[j].CheckStk(searchStk, nganHang[j]))
     //                                {
     //                                    nganHang[i].ChuyenTien(nganHang[i], nganHang[j], amount);
-    //                                    break;
+    //                                    break; // Tat ca dieu kien dung thuc hien chuyen tien out vong lap con
     //                                }
     //                                else
     //                                {
@@ -489,7 +489,7 @@ namespace Chương_5
     //                                    }
     //                                }
     //                            }
-    //                            break;
+    //                            break; // Vong lap con dung da thuc hien xong chuyen tien out vong lap ngaoi
     //                        }
     //                        else
     //                        {
