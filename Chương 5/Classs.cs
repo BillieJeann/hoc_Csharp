@@ -318,282 +318,284 @@ namespace Chương_5
     //    }
     //}
     #endregion
-    public class NganHang
-    {
-        public NganHang(long stk, string name, double balance, string bankName, int validMonth, int validYear, int pin)
-        {
-            STK = stk;
-            Name = name;
-            Balance = balance;
-            BankName = bankName;
-            ValidMonth = validMonth;
-            ValidYear = validYear;
-            Pin = pin;
+    #region Bài 4 :
+    //public class NganHang
+    //{
+    //    public NganHang(long stk, string name, double balance, string bankName, int validMonth, int validYear, int pin)
+    //    {
+    //        STK = stk;
+    //        Name = name;
+    //        Balance = balance;
+    //        BankName = bankName;
+    //        ValidMonth = validMonth;
+    //        ValidYear = validYear;
+    //        Pin = pin;
 
-        }
-        public long STK { get; set; }
-        public string Name { get; set; }
-        public double Balance { get; set; }
+    //    }
+    //    public long STK { get; set; }
+    //    public string Name { get; set; }
+    //    public double Balance { get; set; }
 
-        public string BankName { get; set; }
-        public int ValidMonth { get; set; }
+    //    public string BankName { get; set; }
+    //    public int ValidMonth { get; set; }
 
-        public int ValidYear { get; set; }
+    //    public int ValidYear { get; set; }
 
-        public int Pin { get; set; }
-        public bool CheckStk(long stk, NganHang nganHangs)
-        {
-            if (nganHangs.STK == stk)
-            {
-                return true;
-            }
-            return false;
-        }
-        public void NapTien(NganHang nganHang, double tienNap)
-        {
-            nganHang.Balance += tienNap;
-            Console.WriteLine("Nap tien thanh cong");
-        }
-        public void RutTien(NganHang nganHang, double tienRut)
-        {
-            nganHang.Balance -= tienRut;
-            Console.WriteLine("Rut tien thanh cong");
-        }
-        public void ChuyenTien(NganHang nganHang1, NganHang nganHang2, double tienChuyen)
-        {
-            nganHang1.Balance -= tienChuyen;
-            nganHang2.Balance += tienChuyen;
-            Console.WriteLine("Chuyen tien thanh cong ");
-        }
-    }
+    //    public int Pin { get; set; }
+    //    public bool CheckStk(long stk, NganHang nganHangs)
+    //    {
+    //        if (nganHangs.STK == stk)
+    //        {
+    //            return true;
+    //        }
+    //        return false;
+    //    }
+    //    public void NapTien(NganHang nganHang, double tienNap)
+    //    {
+    //        nganHang.Balance += tienNap;
+    //        Console.WriteLine("Nap tien thanh cong");
+    //    }
+    //    public void RutTien(NganHang nganHang, double tienRut)
+    //    {
+    //        nganHang.Balance -= tienRut;
+    //        Console.WriteLine("Rut tien thanh cong");
+    //    }
+    //    public void ChuyenTien(NganHang nganHang1, NganHang nganHang2, double tienChuyen)
+    //    {
+    //        nganHang1.Balance -= tienChuyen;
+    //        nganHang2.Balance += tienChuyen;
+    //        Console.WriteLine("Chuyen tien thanh cong ");
+    //    }
+    //}
 
-    public class New
-    {
-        static void Main(string[] args)
-        {
-            NganHang[] nganHang = new NganHang[100];
-            int index = 0;
-            int key;
-            bool end = true;
-            while (end)
-            {
-                Console.WriteLine("********************************************");
-                Console.WriteLine("* 1 : Them tai khoan moi                   *");
-                Console.WriteLine("* 2 : Kiem tra so du                       *");
-                Console.WriteLine("* 3 : Nap tien                             *");
-                Console.WriteLine("* 4 : Rut tien                             *");
-                Console.WriteLine("* 5 : Chuyen tien                          *");
-                Console.WriteLine("* 6 : Show danh sach                       *");
-                Console.WriteLine("* 7 : End                                  *");
-                Console.WriteLine("********************************************");
+    //public class New
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        NganHang[] nganHang = new NganHang[100];
+    //        int index = 0;
+    //        int key;
+    //        bool end = true;
+    //        while (end)
+    //        {
+    //            Console.WriteLine("********************************************");
+    //            Console.WriteLine("* 1 : Them tai khoan moi                   *");
+    //            Console.WriteLine("* 2 : Kiem tra so du                       *");
+    //            Console.WriteLine("* 3 : Nap tien                             *");
+    //            Console.WriteLine("* 4 : Rut tien                             *");
+    //            Console.WriteLine("* 5 : Chuyen tien                          *");
+    //            Console.WriteLine("* 6 : Show danh sach                       *");
+    //            Console.WriteLine("* 7 : End                                  *");
+    //            Console.WriteLine("********************************************");
 
-                Console.Write("Nhap lua chon : ");
-                key = int.Parse(Console.ReadLine());
-                switch (key)
-                {
-                    case 1:
-                        nganHang[index++] = ThemMoi();
-                        break;
-                    case 2:
-                        Console.Write("Nhap so tai khoan : ");
-                        long searchStk = long.Parse(Console.ReadLine());
-                        for (int i = 0; i < index; i++)
-                        {
-                            if (nganHang[i].CheckStk(searchStk, nganHang[i]))
-                            {
-                                Console.WriteLine(nganHang[i].Balance);
-                                break;
-                            }
-                            else
-                            {
-                                if (index - i == 1)
-                                {
-                                    Console.WriteLine("Khong ton tai stk");
-                                }
-                            }
-                        }
-                        break;
-                    case 3:
-                        Console.Write("Nhap so tai khoan : ");
-                        searchStk = long.Parse(Console.ReadLine());
-                        for (int i = 0; i < index; i++)
-                        {
-                            if (nganHang[i].CheckStk(searchStk, nganHang[i]))
-                            {
-                                Console.Write("Nhap so tien muon nap : ");
-                                double napTien = long.Parse(Console.ReadLine());
-                                nganHang[i].NapTien(nganHang[i], napTien);
-                                break;
-                            }
-                            else
-                            {
-                                if (index - i == 1)
-                                {
-                                    Console.WriteLine("Khong ton tai stk");
-                                }
-                            }
+    //            Console.Write("Nhap lua chon : ");
+    //            key = int.Parse(Console.ReadLine());
+    //            switch (key)
+    //            {
+    //                case 1:
+    //                    nganHang[index++] = ThemMoi();
+    //                    break;
+    //                case 2:
+    //                    Console.Write("Nhap so tai khoan : ");
+    //                    long searchStk = long.Parse(Console.ReadLine());
+    //                    for (int i = 0; i < index; i++)
+    //                    {
+    //                        if (nganHang[i].CheckStk(searchStk, nganHang[i]))
+    //                        {
+    //                            Console.WriteLine(nganHang[i].Balance);
+    //                            break;
+    //                        }
+    //                        else
+    //                        {
+    //                            if (index - i == 1)
+    //                            {
+    //                                Console.WriteLine("Khong ton tai stk");
+    //                            }
+    //                        }
+    //                    }
+    //                    break;
+    //                case 3:
+    //                    Console.Write("Nhap so tai khoan : ");
+    //                    searchStk = long.Parse(Console.ReadLine());
+    //                    for (int i = 0; i < index; i++)
+    //                    {
+    //                        if (nganHang[i].CheckStk(searchStk, nganHang[i]))
+    //                        {
+    //                            Console.Write("Nhap so tien muon nap : ");
+    //                            double napTien = long.Parse(Console.ReadLine());
+    //                            nganHang[i].NapTien(nganHang[i], napTien);
+    //                            break;
+    //                        }
+    //                        else
+    //                        {
+    //                            if (index - i == 1)
+    //                            {
+    //                                Console.WriteLine("Khong ton tai stk");
+    //                            }
+    //                        }
 
-                        }
-                        break;
-                    case 4:
-                        Console.Write("Nhap so tai khoan : ");
-                        searchStk = long.Parse(Console.ReadLine());
-                        for (int i = 0; i < index; i++)
-                        {
-                            if (nganHang[i].CheckStk(searchStk, nganHang[i]))
-                            {
-                                QuyTrinhRutTien(nganHang, i);
+    //                    }
+    //                    break;
+    //                case 4:
+    //                    Console.Write("Nhap so tai khoan : ");
+    //                    searchStk = long.Parse(Console.ReadLine());
+    //                    for (int i = 0; i < index; i++)
+    //                    {
+    //                        if (nganHang[i].CheckStk(searchStk, nganHang[i]))
+    //                        {
+    //                            QuyTrinhRutTien(nganHang, i);
 
-                                double amount = NhapSoTien(nganHang, i);
+    //                            double amount = NhapSoTien(nganHang, i);
 
-                                nganHang[i].RutTien(nganHang[i], amount);
+    //                            nganHang[i].RutTien(nganHang[i], amount);
 
-                                break;
-                            }
-                            else
-                            {
-                                if (index - i == 1)
-                                {
-                                    Console.WriteLine("Khong ton tai stk");
-                                }
-                            }
-                        }
-                        break;
-                    case 5:
-                        Console.Write("Nhap so tai khoan nguon : ");
-                        searchStk = long.Parse(Console.ReadLine());
-                        for (int i = 0; i < index; i++)
-                        {
-                            if (nganHang[i].CheckStk(searchStk, nganHang[i]))
-                            {
-                                QuyTrinhRutTien(nganHang, i);
+    //                            break;
+    //                        }
+    //                        else
+    //                        {
+    //                            if (index - i == 1)
+    //                            {
+    //                                Console.WriteLine("Khong ton tai stk");
+    //                            }
+    //                        }
+    //                    }
+    //                    break;
+    //                case 5:
+    //                    Console.Write("Nhap so tai khoan nguon : ");
+    //                    searchStk = long.Parse(Console.ReadLine());
+    //                    for (int i = 0; i < index; i++)
+    //                    {
+    //                        if (nganHang[i].CheckStk(searchStk, nganHang[i]))
+    //                        {
+    //                            QuyTrinhRutTien(nganHang, i);
 
-                                double amount = NhapSoTien(nganHang, i);
+    //                            double amount = NhapSoTien(nganHang, i);
 
-                                Console.Write("Nhap tai khoan dich : ");
-                                searchStk = long.Parse(Console.ReadLine());
-                                for (int j = 0; j < index; j++)
-                                {
-                                    if (nganHang[j].CheckStk(searchStk, nganHang[j]))
-                                    {
-                                        nganHang[i].ChuyenTien(nganHang[i], nganHang[j], amount);
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        if (index - j == 1)
-                                        {
-                                            Console.WriteLine("Khong ton tai stk dich");
+    //                            Console.Write("Nhap tai khoan dich : ");
+    //                            searchStk = long.Parse(Console.ReadLine());
+    //                            for (int j = 0; j < index; j++)
+    //                            {
+    //                                if (nganHang[j].CheckStk(searchStk, nganHang[j]))
+    //                                {
+    //                                    nganHang[i].ChuyenTien(nganHang[i], nganHang[j], amount);
+    //                                    break;
+    //                                }
+    //                                else
+    //                                {
+    //                                    if (index - j == 1)
+    //                                    {
+    //                                        Console.WriteLine("Khong ton tai stk dich");
 
-                                        }
-                                    }
-                                }
-                                break;
-                            }
-                            else
-                            {
-                                if (index - i == 1)
-                                {
-                                    Console.WriteLine("Khong ton tai stk nguon");
-                                }
-                            }
-                        }
-                        break;
-                    case 6:
-                        ShowDanhSach(nganHang, index);
-                        break;
-                    case 7:
-                        end = false;
-                        break;
-                }
-            }
+    //                                    }
+    //                                }
+    //                            }
+    //                            break;
+    //                        }
+    //                        else
+    //                        {
+    //                            if (index - i == 1)
+    //                            {
+    //                                Console.WriteLine("Khong ton tai stk nguon");
+    //                            }
+    //                        }
+    //                    }
+    //                    break;
+    //                case 6:
+    //                    ShowDanhSach(nganHang, index);
+    //                    break;
+    //                case 7:
+    //                    end = false;
+    //                    break;
+    //            }
+    //        }
 
-        }
+    //    }
 
-        private static void ShowDanhSach(NganHang[] nganHang, int index)
-        {
-            var titleStk = "So Tai Khoan";
-            var titleName = "Ten Khach Hang";
-            var titleBalance = "So Du";
-            var titleBankName = "Ten Ngan Hang";
-            var titleValidMonth = "Thang Het Han";
-            var titleValidYear = "Nam Het Han";
-            var titlePin = "Ma PIN";
-            Console.WriteLine($"{titleStk,-30} {titleName,-30} {titleBalance,-30} {titleBankName,-30} {titleValidMonth,-30} {titleValidYear,-30} {titlePin,-30} ");
-            for (int i = 0; i < index; i++)
-            {
-                Console.WriteLine($"{nganHang[i].STK,-30} {nganHang[i].Name,-30} {nganHang[i].Balance,-30} {nganHang[i].BankName,-30} {nganHang[i].ValidMonth,-30} {nganHang[i].ValidYear,-30} {nganHang[i].Pin,-30} ");
-            }
-        }
+    //    private static void ShowDanhSach(NganHang[] nganHang, int index)
+    //    {
+    //        var titleStk = "So Tai Khoan";
+    //        var titleName = "Ten Khach Hang";
+    //        var titleBalance = "So Du";
+    //        var titleBankName = "Ten Ngan Hang";
+    //        var titleValidMonth = "Thang Het Han";
+    //        var titleValidYear = "Nam Het Han";
+    //        var titlePin = "Ma PIN";
+    //        Console.WriteLine($"{titleStk,-30} {titleName,-30} {titleBalance,-30} {titleBankName,-30} {titleValidMonth,-30} {titleValidYear,-30} {titlePin,-30} ");
+    //        for (int i = 0; i < index; i++)
+    //        {
+    //            Console.WriteLine($"{nganHang[i].STK,-30} {nganHang[i].Name,-30} {nganHang[i].Balance,-30} {nganHang[i].BankName,-30} {nganHang[i].ValidMonth,-30} {nganHang[i].ValidYear,-30} {nganHang[i].Pin,-30} ");
+    //        }
+    //    }
 
-        private static bool QuyTrinhRutTien(NganHang[] nganHang, int index)
-        {
-            Console.Write("Nhap ma PIN : ");
-            int pinSearch = int.Parse(Console.ReadLine());
-            while (pinSearch != nganHang[index].Pin)
-            {
-                Console.Write("Ma PIN sai moi nhap lai : ");
-                pinSearch = int.Parse(Console.ReadLine());
-            }
-            return true;
+    //    private static bool QuyTrinhRutTien(NganHang[] nganHang, int index)
+    //    {
+    //        Console.Write("Nhap ma PIN : ");
+    //        int pinSearch = int.Parse(Console.ReadLine());
+    //        while (pinSearch != nganHang[index].Pin)
+    //        {
+    //            Console.Write("Ma PIN sai moi nhap lai : ");
+    //            pinSearch = int.Parse(Console.ReadLine());
+    //        }
+    //        return true;
 
-        }
-        public static double NhapSoTien(NganHang[] nganHang, int index)
-        {
-            double amount;
-            Console.Write("Nhap so tien : ");
-            amount = double.Parse(Console.ReadLine());
-            while (amount > nganHang[index].Balance || nganHang[index].Balance - amount < 50000)
-            {
-                Console.Write("Khong du so du moi nhap lai so tien : ");
-                amount = double.Parse(Console.ReadLine());
-            }
-            return amount;
-        }
-        private static NganHang ThemMoi()
-        {
-            Console.Write("Nhap stk moi : ");
-            long stk = long.Parse(Console.ReadLine());
+    //    }
+    //    public static double NhapSoTien(NganHang[] nganHang, int index)
+    //    {
+    //        double amount;
+    //        Console.Write("Nhap so tien : ");
+    //        amount = double.Parse(Console.ReadLine());
+    //        while (amount > nganHang[index].Balance || nganHang[index].Balance - amount < 50000)
+    //        {
+    //            Console.Write("Khong du so du moi nhap lai so tien : ");
+    //            amount = double.Parse(Console.ReadLine());
+    //        }
+    //        return amount;
+    //    }
+    //    private static NganHang ThemMoi()
+    //    {
+    //        Console.Write("Nhap stk moi : ");
+    //        long stk = long.Parse(Console.ReadLine());
 
-            Console.Write("Nhap ten cua ban : ");
-            string name = Console.ReadLine();
+    //        Console.Write("Nhap ten cua ban : ");
+    //        string name = Console.ReadLine();
 
-            Console.Write("Nhap so du : ");
-            double banlace = double.Parse(Console.ReadLine());
-            while (banlace <= 50000)
-            {
-                Console.Write("Nhap so du tren 50000 : ");
-                double newBalance = double.Parse(Console.ReadLine());
-                banlace = newBalance;
-            }
+    //        Console.Write("Nhap so du : ");
+    //        double banlace = double.Parse(Console.ReadLine());
+    //        while (banlace <= 50000)
+    //        {
+    //            Console.Write("Nhap so du tren 50000 : ");
+    //            double newBalance = double.Parse(Console.ReadLine());
+    //            banlace = newBalance;
+    //        }
 
-            Console.Write("Nhap ten ngan hang : ");
-            string bankName = Console.ReadLine();
+    //        Console.Write("Nhap ten ngan hang : ");
+    //        string bankName = Console.ReadLine();
 
 
-            Console.Write("Nhap thang het hang : ");
-            int validMonth = int.Parse(Console.ReadLine());
+    //        Console.Write("Nhap thang het hang : ");
+    //        int validMonth = int.Parse(Console.ReadLine());
 
-            Console.Write("Nhap thang nam hang : ");
-            int validYear = int.Parse(Console.ReadLine());
+    //        Console.Write("Nhap thang nam hang : ");
+    //        int validYear = int.Parse(Console.ReadLine());
 
-            Console.Write("Nhap ma PIN 6 so : ");
-            int pin = int.Parse(Console.ReadLine());
+    //        Console.Write("Nhap ma PIN 6 so : ");
+    //        int pin = int.Parse(Console.ReadLine());
 
-            char[] pinLength = pin.ToString().ToCharArray();
-            while (pinLength.Length != 6)
-            {
+    //        char[] pinLength = pin.ToString().ToCharArray();
+    //        while (pinLength.Length != 6)
+    //        {
 
-                Console.Write("Ma PIN khong hop le moi nhap lai : ");
-                int newPin = int.Parse(Console.ReadLine());
-                pin = newPin;
-                pinLength = pin.ToString().ToCharArray();
+    //            Console.Write("Ma PIN khong hop le moi nhap lai : ");
+    //            int newPin = int.Parse(Console.ReadLine());
+    //            pin = newPin;
+    //            pinLength = pin.ToString().ToCharArray();
 
-            }
-            NganHang nganHang = new NganHang(stk, name, banlace, bankName, validMonth, validYear, pin);
-            return nganHang;
-        }
-    }
+    //        }
+    //        NganHang nganHang = new NganHang(stk, name, banlace, bankName, validMonth, validYear, pin);
+    //        return nganHang;
+    //    }
+    //}
+    #endregion
 }
 
 
