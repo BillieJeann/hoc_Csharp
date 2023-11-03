@@ -735,14 +735,18 @@ namespace Chương_5
             ShowStudent(searchedStudent);
         }
 
-        internal static void XoaSinhVien(Student[] students, int searchId)
+        internal static void XoaSinhVien(Student[] students, int searchId , ref int index)
         {
-            foreach (var item in students)
+            for (int i = 0; i < students.Length; i++)
             {
-                if (item != null && item.Id == searchId)
+                if (students[i] != null && students[i].Id == searchId)
                 {
-                    students[Array.IndexOf(students, item)] = null;
-                    break;
+                    students[i] = null;
+                    for (int j = i; j < students.Length - 1; j++)
+                    {
+                        students[j] = students[j + 1];
+                    }
+                    index--;
                 }
             }
         }
@@ -795,7 +799,7 @@ namespace Chương_5
     {
         static void Main(string[] args)
         {
-            Student[] students = new Student[100];
+            Student[] students = new Student[10];
             int index = 0;
             int key;
             bool end = true;
@@ -861,7 +865,7 @@ namespace Chương_5
                     case 8:
                         Console.Write("Nhap ma sinh vien can xoa : ");
                         int searchId = int.Parse(Console.ReadLine());
-                        Student.XoaSinhVien(students, searchId);
+                        Student.XoaSinhVien(students, searchId,ref index);
                         break;
                     case 9:
                         Student.LietKeSinhVienTheoTinh(students, index);
