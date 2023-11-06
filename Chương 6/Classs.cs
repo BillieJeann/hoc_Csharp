@@ -423,7 +423,7 @@
 //        {
 //            NganHang[] nganHang = new NganHang[100];
 //            int index = 0;
-//            int key;
+//            string key;
 //            bool end = true;
 //            while (end)
 //            {
@@ -438,8 +438,13 @@
 //                Console.WriteLine("********************************************");
 
 //                Console.Write("Nhap lua chon : ");
-//                key = int.Parse(Console.ReadLine());
-//                switch (key)
+//                key = Console.ReadLine();
+//                if (int.TryParse(key, out int newKey) == false)
+//                {
+//                    Console.WriteLine("Nhap sai lua chon.");
+//                    continue;
+//                }
+//                switch (newKey)
 //                {
 //                    case 1:
 //                        nganHang[index++] = ThemMoi();
@@ -521,11 +526,13 @@
 //                    case 7:
 //                        end = false;
 //                        break;
+//                    default:
+//                        Console.WriteLine("Khong ton tai lua chon.");
+//                        break;
+
 //                }
 //            }
-
 //        }
-
 //        private static void ShowDanhSach(NganHang[] nganHang, int index)
 //        {
 //            var titleStk = "So Tai Khoan";
