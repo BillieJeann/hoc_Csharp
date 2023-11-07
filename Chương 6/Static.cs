@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
@@ -83,6 +84,10 @@ namespace Chương_6
         {
             BankId = Math.Pow(10, 13);
         }
+        public BankAccount() 
+        {
+            
+        }  
         public BankAccount(string accName, double balance, string bankName, string pin)
         {
             Id = BankId++;
@@ -90,7 +95,7 @@ namespace Chương_6
             Balance = balance;
             BankName = bankName;
             ValidMonth = 12;
-            ValidYear = 22;
+            ValidYear = 23;
             Pin = pin;
         }
         public static double BankId { get; set; }
@@ -204,10 +209,10 @@ namespace Chương_6
                         break;
                     case 2:
 
-                        if (CheckID(bankAccountsList, out int AccFounded))
+                        if (CheckID(bankAccountsList, out BankAccount AccFounded))
                         {
                             Console.WriteLine();
-                            bankAccountsList[AccFounded].CheckBalance();
+                            AccFounded.CheckBalance();
                             Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
                         }
                         else
@@ -221,7 +226,7 @@ namespace Chương_6
                         if (CheckID(bankAccountsList, out AccFounded))
                         {
                             Console.WriteLine();
-                            bankAccountsList[AccFounded].Recharge();
+                            AccFounded.Recharge();
                             Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
                         }
                         else
@@ -236,9 +241,9 @@ namespace Chương_6
                         if (CheckID(bankAccountsList, out AccFounded))
                         {
                             Console.WriteLine();
-                            if (CheckPIN(bankAccountsList, AccFounded))
+                            if (CheckPIN(AccFounded))
                             {
-                                bankAccountsList[AccFounded].Withdraw();
+                                AccFounded.Withdraw();
                                 Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
                             }
                         }
@@ -251,20 +256,23 @@ namespace Chương_6
 
                         break;
                     case 5:
-                        if (CheckID(bankAccountsList, out int SourceAcc, out int DesAcc))
+                        if (CheckID(bankAccountsList, out BankAccount SourceAcc, out BankAccount DesAcc) && CheckPIN(SourceAcc))
+                        {
+                            SourceAcc.TransferTo(DesAcc);
+                            Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
+                        }
+                        else if(SourceAcc.Id == 0)
                         {
                             Console.WriteLine();
-                            if (CheckPIN(bankAccountsList, SourceAcc))
-                            {
-                                bankAccountsList[SourceAcc].TransferTo(bankAccountsList[DesAcc]);
-                                Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
-                            }
+                            Console.WriteLine("CANNOT FIND SOURCE ID.");
+                            Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
                         }
                         else
                         {
                             Console.WriteLine();
-                            Console.WriteLine("CANNOT FIND YOUR ID.");
+                            Console.WriteLine("CANNOT FIND DESTINATION ID.");
                             Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
+
                         }
                         break;
                     case 6:
@@ -281,47 +289,55 @@ namespace Chương_6
             }
         }
 
-        private static bool CheckPIN(BankAccount[] bankAccounts, int indexOfSearchedAcc)
+        private static bool CheckPIN(BankAccount accountFounded)
         {
             Console.Write("INPUT PIN CODE : ");
             string pinCheck = Console.ReadLine();
             int tryTurn = 2;
             while (tryTurn > 0)
             {
-                if (int.TryParse(pinCheck, out int newPinCheck) == false || pinCheck != bankAccounts[indexOfSearchedAcc].Pin)
+                if (int.TryParse(pinCheck, out int newPinCheck) == false || pinCheck != accountFounded.Pin)
                 {
                     Console.WriteLine("WRONG PIN CODE PLEASE TRY AGAIN : ");
                     pinCheck = Console.ReadLine();
                     tryTurn--;
-                }               
+                }
+                else
+                {
+                    return true;
+                }
                 if (tryTurn == 0)
                 {
                     Console.WriteLine("WRONG INPUT OVER 3 TIME : ");
-                    return false;
+                    
                 }
             }
-            return true;
+            return false;
 
         }
-        private static bool CheckID(BankAccount[] bankAccounts, out int indexOfSourceAcc, out int indexOfDesAcc)
+        private static bool CheckID(BankAccount[] bankAccounts, out BankAccount SourceAcc, out BankAccount DesAcc)
         {
             Console.Write("INPUT SOURCE BANK ACCOUNT ID : ");
             double searchId1 = double.Parse(Console.ReadLine());
-            indexOfSourceAcc = 0;
-            indexOfDesAcc = 0;
-            Console.Write("INPUT DESTINATION BANK ACCOUNT ID: ");
-            double searchId2 = double.Parse(Console.ReadLine());
+            
+            SourceAcc = new BankAccount();
+            DesAcc = new BankAccount();
+
             for (int i = 0; i < bankAccounts.Length; i++)
             {
                 if (bankAccounts[i] != null && bankAccounts[i].Id == searchId1)
                 {
-                    indexOfSourceAcc = i;
 
-                    for (int j = i + 1; j < bankAccounts.Length; j++)
+                    SourceAcc = bankAccounts[i];
+
+                    Console.Write("INPUT DESTINATION BANK ACCOUNT ID: ");
+                    double searchId2 = double.Parse(Console.ReadLine());
+                 
+                    for (int j = 0; j < bankAccounts.Length; j++)
                     {
                         if (bankAccounts[j] != null && bankAccounts[j].Id == searchId2)
                         {
-                            indexOfDesAcc = j;
+                            DesAcc = bankAccounts[j];
 
                             return true;
                         }
@@ -330,16 +346,16 @@ namespace Chương_6
             }
             return false;
         }
-        private static bool CheckID(BankAccount[] bankAccounts, out int indexOfSearchedAcc)
+        private static bool CheckID(BankAccount[] bankAccounts, out BankAccount SearchedAcc)
         {
             Console.Write("INPUT BANK ACCOUNT ID : ");
             double id = double.Parse(Console.ReadLine());
-            indexOfSearchedAcc = 0;
+            SearchedAcc = new BankAccount();
             for (int i = 0; i < bankAccounts.Length; i++)
             {
                 if (bankAccounts[i] != null && bankAccounts[i].Id == id)
                 {
-                    indexOfSearchedAcc = i;
+                    SearchedAcc = bankAccounts[i];
 
                     return true;
                 }
