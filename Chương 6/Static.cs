@@ -293,17 +293,14 @@ namespace Chương_6
                     Console.WriteLine("WRONG PIN CODE PLEASE TRY AGAIN : ");
                     pinCheck = Console.ReadLine();
                     tryTurn--;
-                }
-                else
-                {
-                    return true;
-                }
+                }               
                 if (tryTurn == 0)
                 {
                     Console.WriteLine("WRONG INPUT OVER 3 TIME : ");
+                    return false;
                 }
             }
-            return false;
+            return true;
 
         }
         private static bool CheckID(BankAccount[] bankAccounts, out int indexOfSourceAcc, out int indexOfDesAcc)
