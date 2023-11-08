@@ -79,15 +79,8 @@ namespace Chương_6
     //}
     #endregion
     public class BankAccount
-    {
-        static BankAccount()
-        {
-            BankId = Math.Pow(10, 13);
-        }
-        public BankAccount() 
-        {
-            
-        }  
+    {      
+     
         public BankAccount(string accName, double balance, string bankName, string pin)
         {
             Id = BankId++;
@@ -98,7 +91,7 @@ namespace Chương_6
             ValidYear = 23;
             Pin = pin;
         }
-        public static double BankId { get; set; }
+        public static double BankId = Math.Pow(10,13);  
         public double Id { get; set; }
         public string FullName { get; set; }
         public double Balance { get; set; }
@@ -181,7 +174,7 @@ namespace Chương_6
             BankAccount[] bankAccountsList = new BankAccount[10];
             int bankAccIndex = 0;
             string key;
-            bool end = true;
+            bool end = true;            
             while (end)
             {
                 Console.WriteLine("* 1 : ADD NEW BANK ACCOUNT");
@@ -209,72 +202,70 @@ namespace Chương_6
                         break;
                     case 2:
 
-                        if (CheckID(bankAccountsList, out BankAccount AccFounded))
+                        var searchedAcc = CheckID(bankAccountsList);
+                        if (searchedAcc == null)
                         {
-                            Console.WriteLine();
-                            AccFounded.CheckBalance();
+                            Console.WriteLine("CANNOT FIND YOUR ID.");
                             Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
                         }
                         else
                         {
-                            Console.WriteLine();
-                            Console.WriteLine("CANNOT FIND YOUR ID.");
-                            Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
+                            searchedAcc.CheckBalance();
                         }
                         break;
                     case 3:
-                        if (CheckID(bankAccountsList, out AccFounded))
+                        searchedAcc = CheckID(bankAccountsList);
+                        if (searchedAcc == null)
                         {
-                            Console.WriteLine();
-                            AccFounded.Recharge();
+                            Console.WriteLine("CANNOT FIND YOUR ID.");
                             Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
                         }
                         else
                         {
-                            Console.WriteLine();
-                            Console.WriteLine("CANNOT FIND YOUR ID.");
-                            Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
+
+                            searchedAcc.Recharge();
                         }
                         break;
                     case 4:
 
-                        if (CheckID(bankAccountsList, out AccFounded))
+                        searchedAcc = CheckID(bankAccountsList);
+                        if (searchedAcc == null)
                         {
-                            Console.WriteLine();
-                            if (CheckPIN(AccFounded))
-                            {
-                                AccFounded.Withdraw();
-                                Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
-                            }
+                            Console.WriteLine("CANNOT FIND YOUR ID.");
+                            Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
                         }
                         else
                         {
-                            Console.WriteLine();
-                            Console.WriteLine("CANNOT FIND YOUR ID.");
-                            Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
+
+                            searchedAcc.Withdraw();
                         }
 
                         break;
                     case 5:
-                        if (CheckID(bankAccountsList, out BankAccount SourceAcc, out BankAccount DesAcc) && CheckPIN(SourceAcc))
+                        var searchedAcc1 = CheckID(bankAccountsList);
+                        if (searchedAcc1 == null)
                         {
-                            SourceAcc.TransferTo(DesAcc);
-                            Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
-                        }
-                        else if(SourceAcc.Id == 0)
-                        {
-                            Console.WriteLine();
-                            Console.WriteLine("CANNOT FIND SOURCE ID.");
+                            Console.WriteLine("CANNOT FIND YOUR ID.");
                             Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
                         }
                         else
                         {
-                            Console.WriteLine();
-                            Console.WriteLine("CANNOT FIND DESTINATION ID.");
-                            Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
-
+                            var searchedAcc2 = CheckID(bankAccountsList);
+                            if (searchedAcc2 == null)
+                            {
+                                Console.WriteLine("CANNOT FIND DESTINATION ID.");
+                                Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
+                            }
+                            else
+                            {
+                                if (CheckPIN(searchedAcc1))
+                                {
+                                    searchedAcc1.TransferTo(searchedAcc2);
+                                }
+                            }
                         }
                         break;
+                       
                     case 6:
                         BankAccount.ShowAccList(bankAccountsList);
                         Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
@@ -314,55 +305,21 @@ namespace Chương_6
             }
             return false;
 
-        }
-        private static bool CheckID(BankAccount[] bankAccounts, out BankAccount SourceAcc, out BankAccount DesAcc)
-        {
-            Console.Write("INPUT SOURCE BANK ACCOUNT ID : ");
-            double searchId1 = double.Parse(Console.ReadLine());
-            
-            SourceAcc = new BankAccount();
-            DesAcc = new BankAccount();
-
-            for (int i = 0; i < bankAccounts.Length; i++)
-            {
-                if (bankAccounts[i] != null && bankAccounts[i].Id == searchId1)
-                {
-
-                    SourceAcc = bankAccounts[i];
-
-                    Console.Write("INPUT DESTINATION BANK ACCOUNT ID: ");
-                    double searchId2 = double.Parse(Console.ReadLine());
-                 
-                    for (int j = 0; j < bankAccounts.Length; j++)
-                    {
-                        if (bankAccounts[j] != null && bankAccounts[j].Id == searchId2)
-                        {
-                            DesAcc = bankAccounts[j];
-
-                            return true;
-                        }
-                    }
-                }
-            }
-            return false;
-        }
-        private static bool CheckID(BankAccount[] bankAccounts, out BankAccount SearchedAcc)
+        }    
+        private static BankAccount CheckID(BankAccount[] bankAccounts)
         {
             Console.Write("INPUT BANK ACCOUNT ID : ");
             double id = double.Parse(Console.ReadLine());
-            SearchedAcc = new BankAccount();
-            for (int i = 0; i < bankAccounts.Length; i++)
-            {
-                if (bankAccounts[i] != null && bankAccounts[i].Id == id)
-                {
-                    SearchedAcc = bankAccounts[i];
 
-                    return true;
+            foreach (var account in bankAccounts)
+            {
+                if (account != null && account.Id == id)
+                {
+                    return account;
                 }
             }
-            return false;
+            return null;
         }
-
         private static BankAccount AddBankAccount()
         {
             Console.Write("INPUT FULL NAME : ");
