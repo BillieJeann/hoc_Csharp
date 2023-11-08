@@ -79,25 +79,24 @@ namespace Chương_6
     //}
     #endregion
     public class BankAccount
-    {      
-     
+    {          
         public BankAccount(string accName, double balance, string bankName, string pin)
         {
             Id = BankId++;
             FullName = accName;
             Balance = balance;
-            BankName = bankName;
-            ValidMonth = 12;
-            ValidYear = 23;
-            Pin = pin;
+            BankName = bankName;            
+            Pin = pin;           
         }
         public static double BankId = Math.Pow(10,13);  
         public double Id { get; set; }
         public string FullName { get; set; }
         public double Balance { get; set; }
         public string BankName { get; set; }
-        public int ValidMonth { get; set; }
-        public int ValidYear { get; set; }
+
+        public static int ValidMonth = 12;
+
+        public static int ValidYear = 23;
         public string Pin { get; set; }
 
         public void CheckBalance()
@@ -161,7 +160,7 @@ namespace Chương_6
             {
                 if (account != null)
                 {
-                    Console.WriteLine($"{account.Id,-20} {account.FullName,-20} {account.Balance,-20} {account.BankName,-20} {account.ValidMonth + "/" + account.ValidYear,-20} {account.Pin,-20}");
+                    Console.WriteLine($"{account.Id,-20} {account.FullName,-20} {account.Balance,-20} {account.BankName,-20} {ValidMonth + "/" + ValidYear,-20} {account.Pin,-20}");
                 }
             }
         }
@@ -201,7 +200,7 @@ namespace Chương_6
                         Console.WriteLine("-------------------------------------------------------------------------------------------------------------");
                         break;
                     case 2:
-
+                        Console.Write("INPUT BANK ACCOUNT ID : ");
                         var searchedAcc = CheckID(bankAccountsList);
                         if (searchedAcc == null)
                         {
@@ -214,6 +213,7 @@ namespace Chương_6
                         }
                         break;
                     case 3:
+                        Console.Write("INPUT BANK ACCOUNT ID : ");
                         searchedAcc = CheckID(bankAccountsList);
                         if (searchedAcc == null)
                         {
@@ -227,7 +227,7 @@ namespace Chương_6
                         }
                         break;
                     case 4:
-
+                        Console.Write("INPUT BANK ACCOUNT ID : ");
                         searchedAcc = CheckID(bankAccountsList);
                         if (searchedAcc == null)
                         {
@@ -242,6 +242,7 @@ namespace Chương_6
 
                         break;
                     case 5:
+                        Console.Write("INPUT SOURCE ACCOUNT ID : ");
                         var searchedAcc1 = CheckID(bankAccountsList);
                         if (searchedAcc1 == null)
                         {
@@ -250,6 +251,7 @@ namespace Chương_6
                         }
                         else
                         {
+                            Console.Write("INPUT DESTINATION ACCOUNT ID : ");
                             var searchedAcc2 = CheckID(bankAccountsList);
                             if (searchedAcc2 == null)
                             {
@@ -308,7 +310,7 @@ namespace Chương_6
         }    
         private static BankAccount CheckID(BankAccount[] bankAccounts)
         {
-            Console.Write("INPUT BANK ACCOUNT ID : ");
+            
             double id = double.Parse(Console.ReadLine());
 
             foreach (var account in bankAccounts)
