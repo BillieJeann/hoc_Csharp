@@ -184,7 +184,7 @@ namespace Partialclass.Bank
     }
     class Programm
     {
-        static void Main()
+        /*static void Main()
         {
             Bank[] banks = new Bank[10];
             int index = 0;
@@ -238,6 +238,6 @@ namespace Partialclass.Bank
                         break;
                 }
             }
-        }
+        }*/
     }
 }

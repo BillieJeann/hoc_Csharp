@@ -11,13 +11,13 @@ namespace Partialclass.Emp
         public static Employee CreatEmp()
         {
             Console.Write("Nhập tên nhân viên : ");
-            string? fullName = Console.ReadLine();
+            string fullName = Console.ReadLine();
 
             Console.Write("Nhập số điện thoại của nhân viên : ");
             long phoneNumb = long.Parse(Console.ReadLine());
 
             Console.Write("Nhập chức vụ của nhân viên : ");
-            string? pos = Console.ReadLine();
+            string pos = Console.ReadLine();
 
             Console.Write("Nhập số ngày đi làm trong tháng của nhân viên : ");
             int workDay = int.Parse(Console.ReadLine());
