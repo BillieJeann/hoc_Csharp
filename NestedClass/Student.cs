@@ -73,42 +73,50 @@ namespace NestedClass.Student
         }
         public class StudentGrade
         {
-            public double Cgrade { get; set; }
-            public double EngGrade { get; set; }
-            public double MathGrade { get; set; }
-            public double Gpa { get; set; }
+            public double C;
+            public double Eng;
+            public double Math;
+            public double Gpa;
         }
-        private StudentGrade _studentGrade;
-        public string Grade
+        public StudentGrade _studentGrade;
+        public double Cgrade
         {
-            get => $"C : {_studentGrade.Cgrade} / ENG : {_studentGrade.EngGrade} / MATH : {_studentGrade.MathGrade} / GPA : {_studentGrade.Gpa}";
-            set
-            {
-                _studentGrade = new StudentGrade();
-                var grade = value.Split(" ");
-                _studentGrade.Cgrade = double.Parse(grade[0]);
-                _studentGrade.EngGrade = double.Parse(grade[1]);
-                _studentGrade.MathGrade = double.Parse(grade[2]);
-                _studentGrade.Gpa = Math.Round(((_studentGrade.Cgrade + _studentGrade.EngGrade + _studentGrade.MathGrade) / 3), 2);
-            }
+            get => _studentGrade.C;
+            set => _studentGrade.C = value;
+
         }
-        public double GetGpa() => _studentGrade.Gpa;
-        public string GetLastName() => _fullName.LastName;
-        public string GetFirstName() => _fullName.FirstName;
-        public string GetCity() => _address.City;
-        public void SetCgrade(double cgrade)
+        public double EngGrade
         {
-            _studentGrade.Cgrade = cgrade;
+            get => _studentGrade.Eng;
+            set => _studentGrade.Eng = value;
         }
+        public double MathGrade
+        {
+            get => _studentGrade.Math;
+            set => _studentGrade.Math = value;
+        }
+        public double Gpagrade
+        {
+            get => _studentGrade.Gpa;
+            set => _studentGrade.Gpa = value;
+        }
+
+        public string GetLastName => _fullName.LastName;
+        public string GetFirstName => _fullName.FirstName;
+        public string GetCity => _address.City;
         public Student(string id)
         {
             Id = id;
         }
-        public Student(string id, string fullName, string address, string grade) : this(id)
+        public Student(string id, string fullName, string address, double cgrade, double eng, double math) : this(id) 
         {
+            _studentGrade = new StudentGrade();
             WholeName = fullName;
             FullAddress = address;
-            Grade = grade;
+            Cgrade = cgrade;
+            EngGrade = eng;
+            MathGrade = math;
+            Gpagrade = Math.Round((cgrade + eng + math) / 3, 2);
         }
     }
     class Programm
@@ -118,9 +126,9 @@ namespace NestedClass.Student
             Student[] students = new Student[5];
             int index = 0;
             string key;
-            bool end = true;
+            bool run = true;
             Console.OutputEncoding = Encoding.UTF8;
-            while (true)
+            while (run)
             {
                 Console.WriteLine("" +
                     "1) Thêm mới một sinh viên vào danh sách.\r\n" +
@@ -179,7 +187,7 @@ namespace NestedClass.Student
                         UpdateStudentCgrade(students);
                         break;
                     case 12:
-                        end = false;
+                        run = false;
                         break;
                     default:
                         Console.WriteLine("Nhập sai lựa chọn");
@@ -198,7 +206,7 @@ namespace NestedClass.Student
             {
                 Console.Write("Nhập điểm mới cho sinh viên : ");
                 double newCgrade = double.Parse(Console.ReadLine());
-                searched.SetCgrade(newCgrade);
+                searched.Cgrade = newCgrade;
                 Console.WriteLine("Sửa điểm thành công");
             }
             else
@@ -215,7 +223,7 @@ namespace NestedClass.Student
             {
                 if (students[i] != null)
                 {
-                    var gpa = students[i].GetGpa();
+                    var gpa = students[i].Gpagrade;
                     var pos = Check(gpas, gpa);
                     if (pos != -1)
                     {
@@ -230,7 +238,7 @@ namespace NestedClass.Student
                         index++;
                     }
                 }
-            }          
+            }
             foreach (var item in gpas)
             {
                 if (item != null && item.Gpa >= 3.2)
@@ -238,7 +246,7 @@ namespace NestedClass.Student
                     Console.WriteLine($"{item.Gpa} : {item.Count}");
                 }
             }
-        }  
+        }
 
         private static void ListofCity(Student[] students)
         {
@@ -248,7 +256,7 @@ namespace NestedClass.Student
             {
                 if (students[i] != null)
                 {
-                    var city = students[i].GetCity();
+                    var city = students[i].GetCity;
                     var pos = Check(cities, city);
                     if (pos != -1)
                     {
@@ -262,7 +270,7 @@ namespace NestedClass.Student
                         cities[index].Count = 1;
                         index++;
                     }
-                }              
+                }
             }
             for (int i = 0; i < cities.Length - 1; i++)
             {
@@ -281,7 +289,7 @@ namespace NestedClass.Student
                     Console.WriteLine($"{item.City} : {item.Count}");
                 }
             }
-        }    
+        }
         private static void Swap(ref ListStudentByCity listStudentByCity1, ref ListStudentByCity listStudentByCity2)
         {
             ListStudentByCity tmp = listStudentByCity1;
@@ -316,9 +324,9 @@ namespace NestedClass.Student
             public int Count { get; set; }
             public ListStudentByGpa()
             {
-                
+
             }
-            public ListStudentByGpa(double gpa , int count)
+            public ListStudentByGpa(double gpa, int count)
             {
                 Gpa = gpa;
                 Count = count;
@@ -331,15 +339,15 @@ namespace NestedClass.Student
             public int Count { get; set; }
             public ListStudentByCity()
             {
-                
+
             }
-            public ListStudentByCity(string city , int count)
+            public ListStudentByCity(string city, int count)
             {
                 City = city;
                 Count = count;
             }
         }
-      
+
         private static void DeleteStudent(Student[] students, ref int index)
         {
             Console.Write("Nhập mã sinh viên cần xóa : ");
@@ -404,7 +412,7 @@ namespace NestedClass.Student
 
         private static int FindCity(Student student, string city)
         {
-            if (student != null && student.GetCity().CompareTo(city) == 0)
+            if (student != null && student.GetCity.CompareTo(city) == 0)
             {
                 return 1;
             }
@@ -436,7 +444,7 @@ namespace NestedClass.Student
 
         private static int FindLastName(Student student, string lastName)
         {
-            if (student != null && student.GetLastName().CompareTo(lastName) == 0)
+            if (student != null && student.GetLastName.CompareTo(lastName) == 0)
             {
                 return 1;
             }
@@ -465,7 +473,7 @@ namespace NestedClass.Student
             {
                 return 0;
             }
-            if (student1.GetGpa() == student2.GetGpa() && student1.GetLastName().CompareTo(student2.GetLastName()) > 0 || student1.GetGpa() == student2.GetGpa() && student1.GetFirstName().CompareTo(student2.GetFirstName()) > 0)
+            if (student1.Gpagrade == student2.Gpagrade && student1.GetLastName.CompareTo(student2.GetLastName) > 0 || student1.Gpagrade == student2.Gpagrade && student1.GetFirstName.CompareTo(student2.GetFirstName) > 0)
             {
                 return 1;
             }
@@ -506,7 +514,7 @@ namespace NestedClass.Student
             {
                 return 0;
             }
-            if (student1.GetLastName().CompareTo(student2.GetLastName()) > 0)
+            if (student1.GetLastName.CompareTo(student2.GetLastName) > 0)
             {
                 return 1;
             }
@@ -526,7 +534,7 @@ namespace NestedClass.Student
             {
                 return 0;
             }
-            if (student1.GetGpa().CompareTo(student2.GetGpa()) < 0)
+            if (student1.Gpagrade.CompareTo(student2.Gpagrade) < 0)
             {
                 return 1;
             }
@@ -544,7 +552,7 @@ namespace NestedClass.Student
             {
                 if (item != null)
                 {
-                    Console.WriteLine($"{item.Id,-30} {item.WholeName,-30} {item.FullAddress,-30} {item.Grade,-30}");
+                    Console.WriteLine($"{item.Id,-30} {item.WholeName,-30} {item.FullAddress,-30} {item.Cgrade + " " + item.EngGrade + " " + item.MathGrade + " " + item.Gpagrade,-30}");
                 }
             }
         }
@@ -559,18 +567,22 @@ namespace NestedClass.Student
                 Console.Write("Nhập địa chỉ sinh viên (Thành Phố/Quận/Phường) : ");
                 string addr = Console.ReadLine();
 
-                Console.Write("Nhập điểm sinh viên (C#/Tiếng Anh/Toán) : ");
-                string grade = Console.ReadLine().TrimEnd();
-                foreach (var item in grade)
+                Console.Write("Nhập điểm môn C : ");
+                string Cgrade = Console.ReadLine();
+
+                Console.Write("Nhập điểm môn Tiếng Anh : ");
+                string engGrade = Console.ReadLine();
+
+                Console.Write("Nhập điểm môn Toán : ");
+                string mathGrade = Console.ReadLine();
+
+                if (double.TryParse(Cgrade, out var cgrade) == false || double.TryParse(engGrade, out var eng) == false || double.TryParse(mathGrade, out var math) == false)
                 {
-                    if (item.ToString() != " " && double.TryParse(item.ToString(), out double newgrade) == false)
-                    {
-                        Console.WriteLine("Nhập sai định dạng");
-                        continue;
-                    }
+                    Console.WriteLine("Nhập sai định dạng");
+                    continue;
                 }
                 Console.Write("Thêm Sinh Viên Thành Công");
-                return new Student(null, fullName, addr, grade);
+                return new Student(null, fullName, addr, cgrade,eng,math);
             }
         }
     }
